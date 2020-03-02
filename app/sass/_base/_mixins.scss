@@ -1,0 +1,32 @@
+// help options font-display https://developer.mozilla.org/ru/docs/Web/CSS/@font-face/font-display
+@mixin font-face($name, $path, $weight: normal, $style: normal, $display: swap) {
+  @font-face {
+    font-weight: $weight;
+    font-family: $name;
+    font-style: $style;
+    font-display: $display;
+    src: url("#{$path}.woff") format("woff"), url("#{$path}.woff2") format("woff2");
+  }
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin button($button-bg-color: false) {
+  @if $button-bg-color {
+    background: $button-bg-color;
+  }
+}
+
+@mixin size($a, $b: false) {
+  width: $a;
+  @if $b {
+    height: $b;
+  } @else {
+    height: $a;
+  }
+}

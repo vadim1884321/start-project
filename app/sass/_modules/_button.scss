@@ -1,0 +1,5 @@
+
+.button {
+  @include button($button-bg-color);
+  border: 1px solid transparent;
+}

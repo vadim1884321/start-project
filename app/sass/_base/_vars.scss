@@ -1,0 +1,39 @@
+// Шрифты
+$reserve-font: "Arial", sans-serif;
+$default-font: "roboto-example", $reserve-font;
+
+// Цвета
+$base: rgb(11, 17, 25);
+$accent: rgb(249, 148, 6);
+$text: rgb(189, 189, 189);
+$title: rgb(255, 255, 255);
+$placeholder: rgb(175, 175, 175);
+$line: rgb(36, 41, 48);
+$blue: blue;
+
+// Кнопки
+$button-bg-color: rgb(249, 148, 6);
+$button-color: white;
+$button-border-radius: 8px;
+$button-bg-hover-color: darken($button-bg-color, 10%);
+$button-bg-focus-color: $button-bg-hover-color;
+$button-bg-active-color: darken($button-bg-color, 20%);
+$button-bg-disabled-color: lighten($button-bg-color, 10%);
+
+// Настройка сетки Bootstrap 4
+$grid-gutter-width: 20px;
+$grid-columns: 12;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1190px
+);
+$gutter: $grid-gutter-width;

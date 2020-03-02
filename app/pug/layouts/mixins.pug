@@ -1,0 +1,15 @@
+mixin icon(name, w, h)
+  svg(class="icon icon__" + name width = w height = h aria-hidden="true")
+    use(xlink:href="images/svg-sprite/sprite.svg#" + name)
+
+mixin breadcrumbs(data)
+  nav.breadcrumbs(aria-label="breadcrumbs")
+    ol.breadcrumbs__list
+      each item, index in data
+        if data[index + 1]
+          li.breadcrumbs__item(itemscope itemtype="http://data-vocabulary.org/Breadcrumb")
+            a.breadcrumbs__link(href=item.link itemprop="url")
+              span.breadcrumbs__title(itemprop="title")= item.title
+        else
+          li.breadcrumbs__item(aria-current="page")
+            span.breadcrumbs__page(itemprop="title")= item.title

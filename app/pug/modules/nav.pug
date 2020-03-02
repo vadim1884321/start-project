@@ -1,0 +1,13 @@
+//- - var headerNav = [{ title : 'Главная', link: 'index.html' },{ title: 'Компоненты', link: 'components.html' }]
+
+nav.main-nav
+  .container
+    if nav.headerNav.length > 0
+      ul.main-nav__list
+        each object in nav.headerNav
+          if title === object.title
+            li.main-nav__item.main-nav__item--active
+              a.main-nav__link(href=object.link)= object.title
+          else
+            li.main-nav__item
+              a.main-nav__link(href=object.link)= object.title
