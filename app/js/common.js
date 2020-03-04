@@ -25,5 +25,5 @@
     // else popup.style.display = 'none'
 
 // });
-let title = document.querySelector('.main-header__title');
-title.style.color = 'orange';
+// let title = document.querySelector('.main-header__title');
+// title.style.color = 'orange';

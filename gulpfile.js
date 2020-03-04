@@ -56,7 +56,7 @@ gulp.task('scripts', () => {
     '!node_modules/stickybits/dist/stickybits.min.js',
     '!node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js',
     'node_modules/svgxuse/svgxuse.min.js',
-    'node_modules/pixel-glass/script.js',
+    '!node_modules/pixel-glass/script.js',
     'app/js/common.js', // Всегда в конце
   ])
     // .pipe($.terser())
@@ -76,6 +76,14 @@ gulp.task('svgSprite', () => {
   return gulp.src('app/images/svg/**/*.svg')
     .pipe($.svgo({
       plugins: [
+        // {
+        //   removeAttrs: {
+        //     attrs: '*:(stroke|fill):((?!^none$).)*'
+        //   }
+        // },
+        {
+          removeUselessStrokeAndFill: false
+        },
         { cleanupIDs: false },
         { removeViewBox: false },
         { convertPathData: false },

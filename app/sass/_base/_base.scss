@@ -77,13 +77,15 @@ img {
 
 .visually-hidden {
   position: absolute;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  margin: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
   padding: 0;
   overflow: hidden;
-  border: none;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
 }
 
 @media (prefers-reduced-motion: reduce) {
