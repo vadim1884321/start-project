@@ -27,3 +27,15 @@
 // });
 // let title = document.querySelector('.main-header__title');
 // title.style.color = 'orange';
+function sum(a = false, b = false) {
+  if (a) {
+    return a + b * 2;
+  } else if (b) {
+    return a + b / 2;
+  } else {
+    console.log('не верно');
+  }
+}
+
+console.log(sum(null, 8));
+

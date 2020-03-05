@@ -1,7 +1,25 @@
+- var test = 'горами'
 h2.demo__title.title Кнопки
 
-button.button
-  include ../../images/svg/check-circle.svg
+button.button.button--outline Кнопка
+button.button Кнопка
+a.button(href="#") Кнопка
+
+button.button__icon
+  svg.button__svg(aria-hidden="true" width=25 height=25)
+    use(xlink:href="images/svg-sprite/sprite.svg#switch")
   | Кнопка
-  //- svg.button__icon(aria-hidden="true" width=25 height=25)
-  //-   use(xlink:href="images/svg-sprite/sprite.svg#check-circle") Кнопка
+
+button.button
+  b Subscribe to our newsletter#[br]
+  span(aria-hidden="true") 240K+ subscribers
+
+a.button(href="../../images/1-1600.jpg")
+  svg.button__svg(aria-hidden="true" width=25 height=25)
+    use(xlink:href="images/svg-sprite/sprite.svg#down-arrow")
+  | Скачать изображение
+br
+button.btn Подобрать программу
+
+.box
+  .subbox
