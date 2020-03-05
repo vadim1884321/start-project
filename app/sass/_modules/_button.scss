@@ -93,9 +93,13 @@
 
 .btn {
   @include button(rgba(104, 183, 56, 1),rgba(255, 255, 255, 1), null, 17px, 27px, 17px, 27px);
-  display: inline-block;
   // min-width: 130px;
   // padding: 15px 30px;
+  @include button(rgba(104, 183, 56, 1), rgba(255, 255, 255, 1));
+  display: inline-block;
+  display: inline-block;
+  min-width: 130px;
+  padding: 15px 30px;
   font-size: 16px;
   text-align: center;
   // color: #fff;
