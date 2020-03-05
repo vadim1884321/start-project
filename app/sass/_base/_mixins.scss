@@ -16,9 +16,18 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin button($button-bg-color: false) {
+@mixin button($button-bg-color: false, $button-text-color: false) {
   @if $button-bg-color {
     background: $button-bg-color;
+    &:hover {
+      background: darken($button-bg-color, 10%);
+    }
+    &:active {
+      background: darken($button-bg-color, 20%);
+    }
+  }
+  @if $button-text-color {
+    color: $button-text-color;
   }
 }
 

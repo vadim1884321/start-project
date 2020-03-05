@@ -1,4 +1,62 @@
 .button {
+  display: inline-block;
+  min-width: 130px;
+  padding: 15px 30px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background: #4676d7;
+  background-origin: border-box;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  appearance: none;
+  &:hover {
+    background: #1d49aa;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &:active {
+    background-color: darken(#1d49aa, 15%);
+  }
+  &:disabled {
+    color: #d2d5db;
+    background: #6c7589;
+    cursor: not-allowed;
+  }
+  & > svg {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    vertical-align: text-top;
+    fill: white;
+  }
+  &--outline {
+    padding: 6px 30px;
+    color: #222;
+    background: transparent;
+    border: 2px solid #4676d7;
+    &:hover {
+      color: white;
+      background: linear-gradient(to bottom, #00acee, #0072e0);
+    }
+    &:active {
+      background: #1d49aa;
+    }
+  }
+}
+
+
+
+.button__icon {
   min-width: 130px;
   padding: 8px 16px;
   font-size: 16px;
@@ -28,7 +86,64 @@
     width: 20px;
     height: 20px;
     margin-right: 0.25rem;
-    margin-bottom: 3px;
-    vertical-align: middle;
+    vertical-align: text-top;
+    fill: white;
+  }
+}
+
+.btn {
+  @include button(rgba(104, 183, 56, 1), rgba(255, 255, 255, 1));
+  display: inline-block;
+  min-width: 130px;
+  padding: 15px 30px;
+  font-size: 16px;
+  text-align: center;
+  // color: #fff;
+  text-decoration: none;
+  // background: #4676d7;
+  background-origin: border-box;
+  border: none;
+  // border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  appearance: none;
+  // &:hover {
+  //   background: #1d49aa;
+  // }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  // &:active {
+  //   background-color: darken(#1d49aa, 15%);
+  // }
+  &:disabled {
+    color: #d2d5db;
+    background: #6c7589;
+    cursor: not-allowed;
+  }
+  & > svg {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    vertical-align: text-top;
+    fill: white;
+  }
+  &--outline {
+    padding: 6px 30px;
+    color: #222;
+    background: transparent;
+    border: 2px solid #4676d7;
+    &:hover {
+      color: white;
+      background: linear-gradient(to bottom, #00acee, #0072e0);
+    }
+    &:active {
+      background: #1d49aa;
+    }
   }
 }
