@@ -16,42 +16,70 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin button($button-bg-color: initial, $button-text-color: initial, $button-width: 0, $button-padding-top: 15px, $button-padding-right: false, $button-padding-bottom: $button-padding-top, $button-padding-left: $button-padding-right) {
-  @if $button-bg-color {
-    background: $button-bg-color;
-    &:hover {
-      background: darken($button-bg-color, 10%);
-    }
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 4px $button-bg-color;
-    }
-    &::-moz-focus-inner {
-      border: none;
-    }
-    &:active {
-      background: darken($button-bg-color, 20%);
-    }
+@mixin button($button-bg-color: currentColor, $button-text-color: initial, $button-font-size: $base-font-size, $btn-border-radius: $button-border-radius, $button-width: null, $button-padding...) {
+  background: $button-bg-color;
+  font-size: $button-font-size;
+  border-radius: $btn-border-radius;
+  &:hover {
+    background: darken($button-bg-color, 10%);
   }
-  @if $button-text-color {
-    color: $button-text-color;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px $button-bg-color;
   }
-  @if $button-width {
-    min-width: $button-width;
+  &::-moz-focus-inner {
+    border: none;
   }
-  @if $button-padding-top {
-    padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+  &:active {
+    background: darken($button-bg-color, 20%);
   }
-  @else if $button-padding-right {
-    padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+  &:disabled,
+  [disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .5;
+    user-select: none;
   }
-  @else if $button-padding-bottom {
-    padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-  }
-  @else if $button-padding-left {
-    padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-  }
+  color: $button-text-color;
+  min-width: $button-width;
+  padding: $button-padding;
 }
+// @mixin button($button-bg-color: initial, $button-text-color: initial, $button-width: 0, $button-padding-top: false, $button-padding-right: false, $button-padding-bottom: $button-padding-top, $button-padding-left: $button-padding-right) {
+//   @if $button-bg-color {
+//     background: $button-bg-color;
+//     &:hover {
+//       background: darken($button-bg-color, 10%);
+//     }
+//     &:focus {
+//       outline: none;
+//       box-shadow: 0 0 0 4px $button-bg-color;
+//     }
+//     &::-moz-focus-inner {
+//       border: none;
+//     }
+//     &:active {
+//       background: darken($button-bg-color, 20%);
+//     }
+//   }
+//   @if $button-text-color {
+//     color: $button-text-color;
+//   }
+//   @if $button-width {
+//     min-width: $button-width;
+//   }
+//   @if $button-padding-top {
+//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+//   }
+//   @else if $button-padding-right {
+//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+//   }
+//   @else if $button-padding-bottom {
+//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+//   }
+//   @else if $button-padding-left {
+//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+//   }
+// }
 
 @mixin size($a, $b: false) {
   width: $a;
@@ -60,4 +88,35 @@
   } @else {
     height: $a;
   }
+}
+
+@mixin four($a: 0, $b: 0, $c: 0, $d: 0) {
+  @if $a {
+    margin: $a;
+  } @else if $b {
+    margin: $b;
+  } @else if $c {
+    margin-bottom: $c;
+  } @else if $d {
+    margin-left: $d;
+  }
+}
+
+@mixin linx ($link, $visit, $hover, $active: null) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}
+@mixin pad ($color,$pads...) {
+  color: $color;
+  padding: $pads;
 }

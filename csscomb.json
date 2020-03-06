@@ -1,7 +1,8 @@
 {
   "exclude": [
     ".git/**",
-    "node_modules/**"
+    "node_modules/**",
+    "app/sass/_base/_vars.scss"
   ],
 
   "always-semicolon": true,

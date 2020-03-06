@@ -32,6 +32,7 @@
     "pixel-glass": "^1.0.13"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
     "svgxuse": "^1.2.6"
