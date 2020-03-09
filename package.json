@@ -29,12 +29,15 @@
     "gulp-svgo": "^2.1.1",
     "gulp-svgstore": "^7.0.1",
     "gulp-terser": "^1.2.0",
-    "pixel-glass": "^1.0.13"
+    "pixel-glass": "^1.0.13",
+    "stylelint": "^13.2.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "svgxuse": "^1.2.6"
   }
 }
