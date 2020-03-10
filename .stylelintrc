@@ -1,9 +1,8 @@
 {
   "syntax": "scss",
-  # http://stylelint.io/user-guide/rules/
   "plugins": ["stylelint-order"],
   "rules": {
-    "order/properties-order": [
+    "order/order": [
       [
         "custom-properties",
         "dollar-variables",
@@ -19,13 +18,87 @@
         "declarations",
         {
           "type": "at-rule",
+          "name": "media",
+          "hasBlock": true
+			  },
+        {
+          "type": "at-rule",
           "name": "include",
           "hasBlock": true
         },
         "rules"
       ]
     ],
-    "order/properties-alphabetical-order": true,
+    "order/properties-order": [[
+      {
+        "properties": [
+          "content",
+          "box-sizing",
+          "display",
+          "flex",
+          "flex-wrap",
+          "flex-basis",
+          "flex-direction",
+          "flex-flow",
+          "flex-grow",
+          "flex-shrink",
+          "align-content",
+          "align-items",
+          "align-self",
+          "justify-content",
+          "order",
+          "grid",
+          "grid-area",
+          "grid-auto-*",
+          "grid-column",
+          "grid-column-*",
+          "grid-gap",
+          "grid-row",
+          "grid-row-*",
+          "grid-template",
+          "grid-template-*",
+          "position",
+          "z-index",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "width",
+          "min-width",
+          "max-width",
+          "height",
+          "min-height",
+          "max-height",
+          "margin",
+          "margin-*",
+          "border",
+          "border-*",
+          "padding",
+          "padding-*",
+          "overflow",
+          "overflow-*"
+        ]
+      },
+      {
+        "emptyLineBefore": "always",
+        "properties": [
+          "transform",
+          "transform-*",
+          "backface-visibility",
+          "perspective",
+          "perspective-origin",
+          "transition",
+          "transition-*",
+          "animation",
+          "animation-*"
+        ]
+      }
+    ],
+      {
+        "message": "Неверная очередность свойств",
+        "severity": "warning"
+      }
+    ],
     "color-no-invalid-hex": [true, {
       "message": "Недопустимый шестнадцатеричный цвет"
     }],
@@ -68,7 +141,7 @@
     }],
     "function-url-quotes": ["always", {
       "message": "Необходимы кавычки для URL-адресов",
-      except: "empty"
+      "except": "empty"
     }],
     "function-whitespace-after": ["always", {
       "message": "Необходим пробел между функциями"
@@ -172,13 +245,13 @@
     "declaration-block-trailing-semicolon": ["always", {
       "message": "Необходима точка с запятой в конце строки объявления"
     }],
-    "block-no-empty": [null, {
+    "block-no-empty": [true, {
       "message": "Не должно быть пустых правил",
       "severity": "warning"
     }],
     "block-closing-brace-newline-after": ["always", {
       "message": "Необходим перенос строки, после закрывающей фигурной скобки",
-      ignoreAtRules: ["if", "else"]
+      "ignoreAtRules": ["if", "else"]
     }],
     "block-closing-brace-newline-before": ["always", {
       "message": "Необходим перенос строки, перед закрывающей фигурной скобкой"
@@ -188,7 +261,7 @@
     }],
     "block-opening-brace-space-before": ["always", {
       "message": "Необходим один пробел, перед открывающей фигурной скобкой",
-      ignoreAtRules: ["if", "else"]
+      "ignoreAtRules": ["if", "else"]
     }],
     "selector-pseudo-class-no-unknown": [true, {
       "message": "Неизвестный псевдокласс селектора"
@@ -204,7 +277,7 @@
       "severity": "warning",
       "resolveNestedSelectors": true
     }],
-    "selector-id-pattern": [ [/\s\S/], {
+    "selector-id-pattern": ["[a-z]+", {
       "message": "Неожиданный id селектора (selector-id-pattern)"
     }],
     "selector-max-empty-lines": [0, {
@@ -302,7 +375,7 @@
     }],
     "at-rule-no-unknown": [true, {
       "message": "Неизвестное @-правило",
-      ignoreAtRules: [
+      "ignoreAtRules": [
         "/^at-/",
         "/^at-root/",
         "/^mixin/",
@@ -313,7 +386,7 @@
         "/^each/",
         "/^warn/",
         "/^function/",
-        "/^return/",
+        "/^return/"
       ]
     }],
     "at-rule-no-vendor-prefix": [true, {
@@ -328,8 +401,8 @@
     }],
     "comment-empty-line-before": ["always", {
       "message": "Необходима пустая строка перед комментарием",
-      except: ["first-nested"],
-      ignore: ["stylelint-commands", "after-comment"]
+      "except": ["first-nested"],
+      "ignore": ["stylelint-commands", "after-comment"]
     }],
     "no-duplicate-at-import-rules": [true, {
       "message": "Дублирование правила @import"

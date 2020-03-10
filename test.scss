@@ -1,8 +1,38 @@
 .test {
-  background-color: #fff;
+  --test: green;
+  $dark: black;
+  content: '';
+  display: grid;
+  justify-content: center;
+  position: absolute;
   border: 1px solid #000;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
   border-radius: 50%;
   color: #000;
-  content: '';
-  transform: translate(-50%, -50%);
+
+}
+
+#block {
+  &__element {
+    color: #000;
+  }
+}
+
+.error {
+  background-color: #fdd;
+  border: 1px #f00;
+  &--serious {
+    @extend .error;
+    border-width: 3px;
+    color: #000;
+    content: '';
+    @media (min-width: 768px) {
+      border: 1px solid #000;
+      color: #000;
+    }
+    @include desktop() {
+      bottom: 45px;
+    }
+  }
 }
