@@ -80,7 +80,6 @@
         ]
       },
       {
-        "emptyLineBefore": "always",
         "properties": [
           "transform",
           "transform-*",
@@ -282,9 +281,6 @@
     }],
     "selector-max-empty-lines": [0, {
       "message": "Ограничение количества смежных пустых строк внутри селекторов"
-    }],
-    "selector-max-universal": [0, {
-      "message": "Ограничение количества количество универсальных селекторов"
     }],
     "selector-no-vendor-prefix": [true, {
       "message": "Вендорные префиксы для селекторов - запрещены"
