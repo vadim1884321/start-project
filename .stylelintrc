@@ -3,7 +3,7 @@
   # http://stylelint.io/user-guide/rules/
   "plugins": ["stylelint-order"],
   "rules": {
-    "order/order": [
+    "order/properties-order": [
       [
         "custom-properties",
         "dollar-variables",
