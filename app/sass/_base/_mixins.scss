@@ -5,7 +5,7 @@
     font-family: $name;
     font-style: $style;
     font-display: $display;
-    src: url("#{$path}.woff") format("woff"), url("#{$path}.woff2") format("woff2");
+    src: url('#{$path}.woff') format('woff'), url('#{$path}.woff2') format('woff2');
   }
 }
 
@@ -20,6 +20,9 @@
   background: $button-bg-color;
   font-size: $button-font-size;
   border-radius: $btn-border-radius;
+  color: $button-text-color;
+  min-width: $button-width;
+  padding: $button-padding;
   &:hover {
     background: darken($button-bg-color, 10%);
   }
@@ -40,46 +43,7 @@
     opacity: .5;
     user-select: none;
   }
-  color: $button-text-color;
-  min-width: $button-width;
-  padding: $button-padding;
 }
-// @mixin button($button-bg-color: initial, $button-text-color: initial, $button-width: 0, $button-padding-top: false, $button-padding-right: false, $button-padding-bottom: $button-padding-top, $button-padding-left: $button-padding-right) {
-//   @if $button-bg-color {
-//     background: $button-bg-color;
-//     &:hover {
-//       background: darken($button-bg-color, 10%);
-//     }
-//     &:focus {
-//       outline: none;
-//       box-shadow: 0 0 0 4px $button-bg-color;
-//     }
-//     &::-moz-focus-inner {
-//       border: none;
-//     }
-//     &:active {
-//       background: darken($button-bg-color, 20%);
-//     }
-//   }
-//   @if $button-text-color {
-//     color: $button-text-color;
-//   }
-//   @if $button-width {
-//     min-width: $button-width;
-//   }
-//   @if $button-padding-top {
-//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-//   }
-//   @else if $button-padding-right {
-//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-//   }
-//   @else if $button-padding-bottom {
-//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-//   }
-//   @else if $button-padding-left {
-//     padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
-//   }
-// }
 
 @mixin size($a, $b: false) {
   width: $a;
@@ -87,18 +51,6 @@
     height: $b;
   } @else {
     height: $a;
-  }
-}
-
-@mixin four($a: 0, $b: 0, $c: 0, $d: 0) {
-  @if $a {
-    margin: $a;
-  } @else if $b {
-    margin: $b;
-  } @else if $c {
-    margin-bottom: $c;
-  } @else if $d {
-    margin-left: $d;
   }
 }
 
@@ -115,8 +67,4 @@
       color: $active;
     }
   }
-}
-@mixin pad ($color,$pads...) {
-  color: $color;
-  padding: $pads;
 }

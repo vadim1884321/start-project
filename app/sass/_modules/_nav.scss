@@ -6,7 +6,7 @@
   padding: 0;
   text-align: center;
   background-color: #311b92;
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, .4);
   &__list {
     margin: 0;
     padding-left: 0;
@@ -23,7 +23,7 @@
     padding: 20px;
     color: #fff;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
-    transition: ease-out 0.25s;
+    transition: ease-out .25s;
     &:hover,
     &:focus {
       border-bottom: 3px solid rgba(255, 255, 255, 1);

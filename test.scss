@@ -1,39 +1,285 @@
-.test {
-  --test: green;
-  $dark: black;
-  content: '';
-  display: grid;
-  justify-content: center;
-  position: absolute;
-  border: 1px solid #000;
-  transform: translate(-50%, -50%);
-  color: #000;
-  background-color: #fff;
-  border-radius: 50%;
-
-}
-
-
-#block {
-  &__element {
-    //
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+// Variables
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans',
+  sans-serif;
+// clear-fix mixin
+@mixin cf {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
   }
 }
 
-.error {
-  background-color: #fdd;
-  border: 1px #f00;
-  &--serious {
-    @extend .error;
-    border-width: 3px;
-    color: #000;
-    content: '';
-    @media (min-width: 768px) {
-      border: 1px solid #000;
-      color: #000;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, $regal-blue, $san-juan);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  font-family: $open-sans;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: $open-sans;
+  font-weight: 300;
+}
+
+.row {
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+// Base styles
+.card {
+  width: 50%;
+  padding: 0 1.7rem;
+  float: left;
+  .menu-content {
+    @include cf;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: inline-block;
     }
-    @include desktop() {
-      bottom: 45px;
+    a {
+      color: $white;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Open Sans';
+    }
+  }
+  .wrapper {
+    position: relative;
+    min-height: 540px;
+    overflow: hidden;
+    background-color: $white;
+    box-shadow: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .2);
+    &:hover {
+      .data {
+        transform: translateY(0);
+      }
+    }
+  }
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform .3s;
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 1em;
+    }
+  }
+  .author {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+  }
+  .text {
+    height: 70px;
+    margin: 0;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+  }
+}
+
+// First example styles
+.example-1 {
+  .wrapper {
+    background: url('https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80') 20% 1% / cover no-repeat;
+  }
+  .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $bermuda;
+    color: $white;
+    padding: .8em;
+    span {
+      display: block;
+      text-align: center;
+    }
+    .day {
+      font-weight: 700;
+      font-size: 24px;
+      text-shadow: 2px 3px 2px rgba($black, .18);
+    }
+    .month {
+      text-transform: uppercase;
+    }
+    .month,
+    .year {
+      font-size: 12px;
+    }
+  }
+  .content {
+    background-color: $white;
+    box-shadow: 0 5px 30px 10px rgba($black, .3);
+  }
+  .title {
+    a {
+      color: lighten($black, 50%);
+    }
+  }
+  .menu-button {
+    position: absolute;
+    z-index: 999;
+    top: 16px;
+    right: 16px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+    span {
+      display: inline-block;
+      position: relative;
+      width: 5px;
+      height: 5px;
+      background-color: lighten($black, 50%);
+      color: lighten($black, 50%);
+      border-radius: 50%;
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: currentColor;
+        border-radius: 50%;
+      }
+      &::before {
+        left: -10px;
+      }
+      &::after {
+        right: -10px;
+      }
+    }
+  }
+  .menu-content {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform .3s;
+    text-align: center;
+    li {
+      position: relative;
+      width: 33.333333%;
+      height: 60px;
+      float: left;
+      background-color: $bermuda;
+    }
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+    }
+    span {
+      top: -10px;
+    }
+  }
+}
+
+// Second example styles
+.example-2 {
+  .wrapper {
+    background: url('https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg') center / cover no-repeat;
+    &:hover {
+      .menu-content {
+        span {
+          transform: translate(-50%, -10px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header {
+    @include cf;
+    color: $white;
+    padding: 1em;
+    .date {
+      float: left;
+      font-size: 12px;
+    }
+  }
+  .menu-content {
+    float: right;
+    li {
+      position: relative;
+      margin: 0 5px;
+    }
+    span {
+      transition: all .3s;
+      opacity: 0;
+    }
+  }
+  .data {
+    color: $white;
+    transform: translateY(calc(70px + 4em));
+  }
+  .title {
+    a {
+      color: $white;
+    }
+  }
+  .button {
+    display: block;
+    position: relative;
+    width: 100px;
+    margin: 2em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
+    line-height: 1;
+    font-weight: 700;
+    &::after {
+      content: '\2192';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      transition: all .3s;
+      opacity: 0;
+    }
+    &:hover {
+      &::after {
+        transform: translate(5px, -50%);
+        opacity: 1;
+      }
     }
   }
 }

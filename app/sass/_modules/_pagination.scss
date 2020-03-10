@@ -13,24 +13,24 @@
     &--current {
       color: green;
     }
-    &__link {
-      min-width: 20px;
-      padding: 10px;
-      &:visited {
-        display: inline-block;
-        color: currentColor;
-        text-decoration: none;
-        transition: 125ms color ease-in-out;
-      }
-      &:hover,
-      &:focus,
-      &:active {
-        color: red;
-      }
+  }
+  &__link {
+    min-width: 20px;
+    padding: 10px;
+    &:visited {
+      display: inline-block;
+      color: currentColor;
+      text-decoration: none;
+      transition: 125ms color ease-in-out;
     }
-    &__text {
-      min-width: 20px;
-      padding: 10px;
+    &:hover,
+    &:focus,
+    &:active {
+      color: red;
     }
+  }
+  &__text {
+    min-width: 20px;
+    padding: 10px;
   }
 }
