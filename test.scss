@@ -24,10 +24,9 @@ $open-sans: 'Open Sans',
 }
 
 body {
-  background-image: linear-gradient(to right, $regal-blue, $san-juan);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  content: '';
   height: 100vh;
+  background-image: linear-gradient(to right, $regal-blue, $san-juan);
   font-family: $open-sans;
 }
 

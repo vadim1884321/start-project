@@ -90,7 +90,6 @@
 }
 
 .btn {
-  @include button(#4676d7, white, 20px, 10px, 150px, 17px 27px 27px);
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -122,17 +121,17 @@
     }
   }
 }
-.box {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #000;
-  &__boxy {
-    @include four(20px, 30px, 40px, 10px);
-    @include linx(white, blue, green);
-    @include pad(blue);
-    background-color: gray;
-    width: 50px;
-    height: 50px;
-    border: 1px solid red;
+
+.modal {
+  &__btn {
+    @include button(#ffbf07, rgba(0, 0, 0, 1), 13px, 30px, 265px, 17px 90px 18px 90px);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+.hero {
+  &__btn {
+    @include button(#f50047, rgba(255, 255, 255, 1), 13px, 40px, 226px, 21px 67px);
+    text-transform: uppercase;
   }
 }

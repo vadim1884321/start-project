@@ -76,14 +76,6 @@ gulp.task('svgSprite', () => {
   return gulp.src('app/images/svg/**/*.svg')
     .pipe($.svgo({
       plugins: [
-        // {
-        //   removeAttrs: {
-        //     attrs: '*:(stroke|fill):((?!^none$).)*'
-        //   }
-        // },
-        {
-          removeUselessStrokeAndFill: false
-        },
         { cleanupIDs: false },
         { removeViewBox: false },
         { convertPathData: false },

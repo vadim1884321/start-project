@@ -22,12 +22,13 @@
 }
 
 body {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  font: $base-font-size / 1.5 $default-font;
+  font: #{$base-font-size} / 1.5 $default-font;
   color: inherit;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
