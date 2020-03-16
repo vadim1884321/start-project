@@ -6,7 +6,8 @@ $bermuda: #77d7b9;
 $white: #fff;
 $black: #000;
 $open-sans: 'Open Sans',
-  sans-serif;
+sans-serif;
+
 // clear-fix mixin
 @mixin cf {
   &::before,
@@ -14,6 +15,7 @@ $open-sans: 'Open Sans',
     content: '';
     display: table;
   }
+
   &::after {
     clear: both;
   }
@@ -26,8 +28,8 @@ $open-sans: 'Open Sans',
 body {
   content: '';
   height: 100vh;
-  background-image: linear-gradient(to right, $regal-blue, $san-juan);
   font-family: $open-sans;
+  background-image: linear-gradient(to right, $regal-blue, $san-juan);
 }
 
 a {
@@ -35,8 +37,8 @@ a {
 }
 
 h1 {
-  font-family: $open-sans;
   font-weight: 300;
+  font-family: $open-sans;
 }
 
 .row {
@@ -46,67 +48,80 @@ h1 {
 
 // Base styles
 .card {
+  float: left;
   width: 50%;
   padding: 0 1.7rem;
-  float: left;
+
   .menu-content {
     @include cf;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
     li {
       display: inline-block;
     }
+
     a {
       color: $white;
     }
+
     span {
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, 0);
-      font-size: 10px;
       font-weight: 700;
+      font-size: 10px;
       font-family: 'Open Sans';
+      transform: translate(-50%, 0);
     }
   }
+
   .wrapper {
     position: relative;
     min-height: 540px;
     overflow: hidden;
     background-color: $white;
-    box-shadow: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .2);
+    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+
     &:hover {
       .data {
         transform: translateY(0);
       }
     }
   }
+
   .data {
     position: absolute;
     bottom: 0;
     width: 100%;
     transform: translateY(calc(70px + 1em));
-    transition: transform .3s;
+    transition: transform 0.3s;
+
     .content {
       position: relative;
       z-index: 1;
       padding: 1em;
     }
   }
+
   .author {
     font-size: 12px;
   }
+
   .title {
     margin-top: 10px;
   }
+
   .text {
     height: 70px;
     margin: 0;
   }
+
   input[type='checkbox'] {
     display: none;
   }
+
   input[type='checkbox']:checked + .menu-content {
     transform: translateY(-60px);
   }
@@ -117,96 +132,112 @@ h1 {
   .wrapper {
     background: url('https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80') 20% 1% / cover no-repeat;
   }
+
   .date {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $bermuda;
+    padding: 0.8em;
     color: $white;
-    padding: .8em;
+    background-color: $bermuda;
+
     span {
       display: block;
       text-align: center;
     }
+
     .day {
       font-weight: 700;
       font-size: 24px;
-      text-shadow: 2px 3px 2px rgba($black, .18);
+      text-shadow: 2px 3px 2px rgba($black, 0.18);
     }
+
     .month {
       text-transform: uppercase;
     }
+
     .month,
     .year {
       font-size: 12px;
     }
   }
+
   .content {
     background-color: $white;
-    box-shadow: 0 5px 30px 10px rgba($black, .3);
+    box-shadow: 0 5px 30px 10px rgba($black, 0.3);
   }
+
   .title {
     a {
       color: lighten($black, 50%);
     }
   }
+
   .menu-button {
     position: absolute;
-    z-index: 999;
     top: 16px;
     right: 16px;
+    z-index: 999;
     width: 25px;
     text-align: center;
     cursor: pointer;
+
     span {
-      display: inline-block;
       position: relative;
+      display: inline-block;
       width: 5px;
       height: 5px;
-      background-color: lighten($black, 50%);
       color: lighten($black, 50%);
+      background-color: lighten($black, 50%);
       border-radius: 50%;
+
       &::after,
       &::before {
         content: '';
-        display: block;
         position: absolute;
+        display: block;
         width: 5px;
         height: 5px;
         background-color: currentColor;
         border-radius: 50%;
       }
+
       &::before {
         left: -10px;
       }
+
       &::after {
         right: -10px;
       }
     }
   }
+
   .menu-content {
     position: absolute;
-    z-index: -1;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
-    transform: translateY(0);
-    transition: transform .3s;
     text-align: center;
+    transform: translateY(0);
+    transition: transform 0.3s;
+
     li {
       position: relative;
+      float: left;
       width: 33.333333%;
       height: 60px;
-      float: left;
       background-color: $bermuda;
     }
+
     a {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
       font-size: 24px;
+      transform: translate(-50%, -50%);
     }
+
     span {
       top: -10px;
     }
@@ -217,6 +248,7 @@ h1 {
 .example-2 {
   .wrapper {
     background: url('https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg') center / cover no-repeat;
+
     &:hover {
       .menu-content {
         span {
@@ -226,54 +258,64 @@ h1 {
       }
     }
   }
+
   .header {
     @include cf;
-    color: $white;
     padding: 1em;
+    color: $white;
+
     .date {
       float: left;
       font-size: 12px;
     }
   }
+
   .menu-content {
     float: right;
+
     li {
       position: relative;
       margin: 0 5px;
     }
+
     span {
-      transition: all .3s;
       opacity: 0;
+      transition: all 0.3s;
     }
   }
+
   .data {
     color: $white;
     transform: translateY(calc(70px + 4em));
   }
+
   .title {
     a {
       color: $white;
     }
   }
+
   .button {
-    display: block;
     position: relative;
+    display: block;
     width: 100px;
     margin: 2em auto 1em;
-    text-align: center;
-    font-size: 12px;
-    color: $white;
-    line-height: 1;
     font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    color: $white;
+
     &::after {
       content: '\2192';
       position: absolute;
       top: 50%;
       right: 0;
       transform: translate(0, -50%);
-      transition: all .3s;
       opacity: 0;
+      transition: all 0.3s;
     }
+
     &:hover {
       &::after {
         transform: translate(5px, -50%);

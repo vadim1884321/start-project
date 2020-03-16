@@ -12,7 +12,7 @@
   "element-case": "lower",
   "eof-newline": true,
   "leading-zero": true,
-  "quotes": "double",
+  "quotes": "single",
   "remove-empty-rulesets": true,
   "sort-order-fallback": "abc",
   "space-before-colon": "",
@@ -26,12 +26,12 @@
   "space-after-selector-delimiter": "\n",
   "space-before-closing-brace": "\n",
   "strip-spaces": true,
-  "tab-size": 2,
+  "tab-size": false,
   "unitless-zero": true,
   "vendor-prefix-align": true,
   "sort-order": [
     [
-    	"$variable",
+      "$variable",
     	"$extend",
     	"$include",
     	"$import",
@@ -441,7 +441,7 @@
     	"$include sm",
     	"$include sm-block",
     	"$include xs",
-    	"$include xs-block"
+      "$include xs-block"
     ]
   ]
 }

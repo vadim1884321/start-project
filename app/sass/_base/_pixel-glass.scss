@@ -1,0 +1,23 @@
+// Настройка Pixel Glass
+html {
+  /* По умолчанию показывается мобильный макет */
+  background-image: url('../../images/планшет_арбитраж.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+/* Планшет */
+@media (min-width: 760px) {
+  html {
+    /* Планшетный макет */
+    background-image: url('../../images/планшет_арбитраж.png');
+  }
+}
+
+/* Десктоп */
+@media (min-width: 960px) {
+  html {
+    /* Десктопный макет */
+    background-image: url('../../images/арбитраж.png');
+  }
+}

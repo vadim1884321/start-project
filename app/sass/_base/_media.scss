@@ -1,22 +1,24 @@
 @import 'vars';
 
 // Containers
-.container {
-  min-width: 320px;
-  margin: 0 auto;
-}
+// .container {
+//   min-width: 320px;
+//   margin   : 0 auto;
+// }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .container {
     max-width: 320px;
     margin: 0 auto;
+    border: 5px solid teal;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .container {
     max-width: 768px;
     margin: 0 auto;
+    border: 5px solid tomato;
   }
 }
 
@@ -24,6 +26,7 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    border: 5px solid #000;
   }
 }
 
