@@ -6,7 +6,7 @@ const browserSync = require('browser-sync').create();
 const $ = require('gulp-load-plugins')();
 
 // Разметка
-gulp.task('pug', () => {
+const pug = () => {
   return gulp.src('app/pug/pages/**/*.pug')
     .pipe($.pug({
       locals : {
@@ -25,10 +25,10 @@ gulp.task('pug', () => {
     .pipe($.replace('../../', './'))
     .pipe(gulp.dest('app/'))
     .on('end', browserSync.reload);
-});
+};
 
 // Обработка стилей
-gulp.task('styles', () => {
+const styles = () => {
   return gulp.src('app/sass/**/*.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({ outputStyle: 'expanded' }).on("error", $.notify.onError()))
@@ -44,10 +44,10 @@ gulp.task('styles', () => {
     .pipe($.sourcemaps.write('/'))
     .pipe(gulp.dest('app/css/'))
     .pipe(browserSync.stream())
-});
+};
 
 // Обработка скриптов
-gulp.task('scripts', () => {
+const scripts = () => {
   return gulp.src([
     // Подключаем JS библиотеки
     '!node_modules/picturefill/dist/picturefill.min.js',
@@ -60,16 +60,16 @@ gulp.task('scripts', () => {
     .pipe($.concat('main.min.js'))
     .pipe(gulp.dest('app/js/'))
     .on('end', browserSync.reload);
-});
+};
 
 // Очистка папки c svg-спрайтом
-gulp.task('svgClean', () => {
+const svgClean = () => {
   return gulp.src('app/images/svg-sprite/**/', {read: false})
     .pipe($.clean());
-});
+};
 
 // Обработка SVG, создание svg-спрайта
-gulp.task('svgSprite', () => {
+const svgSprite = () => {
   return gulp.src('app/images/svg/**/*.svg')
     .pipe($.svgo({
       plugins: [
@@ -82,10 +82,10 @@ gulp.task('svgSprite', () => {
     .pipe($.svgstore({ inlineSvg: true }))
     .pipe($.rename('sprite.svg'))
     .pipe(gulp.dest('app/images/svg-sprite/'));
-});
+};
 
 // Автоперезагрузка браузера (Live Server)
-gulp.task('serve', () => {
+const serve = () => {
   browserSync.init({
     server: {
       baseDir: 'app',
@@ -97,12 +97,19 @@ gulp.task('serve', () => {
     // tunnel: "projectname", //Demonstration page: http://projectname.localtunnel.me
   });
   // browserSync.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/pug/**/*.pug', gulp.series('pug'));
-  gulp.watch('app/sass/**/*.scss', gulp.series('styles'));
-  gulp.watch('app/js/common.js', gulp.series('scripts'));
-  gulp.watch('app/images/svg/**/*.svg', gulp.series('svg'));
-});
+  gulp.watch('app/pug/**/*.pug', gulp.series(pug));
+  gulp.watch('app/sass/**/*.scss', gulp.series(styles));
+  gulp.watch('app/js/common.js', gulp.series(scripts));
+  gulp.watch('app/images/svg/**/*.svg', gulp.series(svg));
+};
 
-gulp.task('svg', gulp.series('svgClean', gulp.parallel('svgSprite')));
+const svg = gulp.series(svgClean, gulp.parallel(svgSprite));
+const dev = gulp.series(gulp.parallel(pug, styles, scripts, svg, serve));
 
-gulp.task('default', gulp.series(gulp.parallel('pug', 'styles', 'scripts', 'svg', 'serve')));
+exports.pug = pug;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.svgClean = svgClean;
+exports.svgSprite = svgSprite;
+exports.serve = serve;
+exports.default = dev;
