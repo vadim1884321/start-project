@@ -24,7 +24,7 @@ gulp.task('pug', () => {
     }))
     .pipe($.replace('../../', './'))
     .pipe(gulp.dest('app/'))
-    .pipe(browserSync.stream())
+    .on('end', browserSync.reload);
 });
 
 // Обработка стилей
@@ -50,11 +50,8 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   return gulp.src([
     // Подключаем JS библиотеки
-    '!node_modules/jquery/dist/jquery.min.js',
     '!node_modules/picturefill/dist/picturefill.min.js',
     '!node_modules/object-fit-images/dist/ofi.min.js',
-    '!node_modules/stickybits/dist/stickybits.min.js',
-    '!node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js',
     'node_modules/svgxuse/svgxuse.min.js',
     '!node_modules/pixel-glass/script.js',
     'app/js/common.js', // Всегда в конце
@@ -62,7 +59,7 @@ gulp.task('scripts', () => {
     // .pipe($.terser())
     .pipe($.concat('main.min.js'))
     .pipe(gulp.dest('app/js/'))
-    .pipe(browserSync.stream())
+    .on('end', browserSync.reload);
 });
 
 // Очистка папки c svg-спрайтом
@@ -87,14 +84,6 @@ gulp.task('svgSprite', () => {
     .pipe(gulp.dest('app/images/svg-sprite/'));
 });
 
-// Слежение за изменениями файлов
-gulp.task('watch', () => {
-  gulp.watch('app/pug/**/*.pug', gulp.series('pug'));
-  gulp.watch('app/sass/**/*.scss', gulp.series('styles'));
-  gulp.watch('app/js/common.js', gulp.series('scripts'));
-  gulp.watch('app/images/svg/**/*.svg', gulp.series('svg'));
-});
-
 // Автоперезагрузка браузера (Live Server)
 gulp.task('serve', () => {
   browserSync.init({
@@ -108,8 +97,12 @@ gulp.task('serve', () => {
     // tunnel: "projectname", //Demonstration page: http://projectname.localtunnel.me
   });
   // browserSync.watch('app/*.html', browserSync.reload);
+  gulp.watch('app/pug/**/*.pug', gulp.series('pug'));
+  gulp.watch('app/sass/**/*.scss', gulp.series('styles'));
+  gulp.watch('app/js/common.js', gulp.series('scripts'));
+  gulp.watch('app/images/svg/**/*.svg', gulp.series('svg'));
 });
 
 gulp.task('svg', gulp.series('svgClean', gulp.parallel('svgSprite')));
 
-gulp.task('default', gulp.series(gulp.parallel('styles', 'scripts', 'svg', 'serve', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('pug', 'styles', 'scripts', 'svg', 'serve')));

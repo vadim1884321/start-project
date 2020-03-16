@@ -26,47 +26,4 @@
 
 // });
 // let title = document.querySelector('.main-header__title');
-// title.style.color = 'orange';
-let users = [
-  {
-      id: 1,
-      login: 'harry',
-      password: 'qwerty',
-      status: 'admin',
-      access: true
-  },
-  {
-      id: 2,
-      login: 'alice',
-      password: 'qwerty',
-      status: 'user'
-  },
-  {
-      id: 3,
-      login: 'bob',
-      password: 'qwerty',
-      status: 'user'
-  },
-  {
-      id: 4,
-      login: 'john',
-      password: 'qwerty',
-      status: 'user'
-  },
-  {
-      id: 5,
-      login: 'jane',
-      password: 'qwerty',
-      status: 'user'
-  }
-]
-
-const x = {a:'Ошибка'};
-
-// console.log(JSON.stringify(users, null, 2));
-// console.table(users);
-console.log(x);
-console.info(x);
-console.error(x);
-console.warn(x);
-console.table(x);
+// title.style.color = 'green';
