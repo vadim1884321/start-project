@@ -1,47 +1,51 @@
 @import 'vars';
 
 // Containers
-// .container {
-//   min-width: 320px;
-//   margin   : 0 auto;
-// }
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
 
 @media (min-width: 320px) {
   .container {
     max-width: 320px;
-    margin: 0 auto;
-    border: 5px solid teal;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
-    margin: 0 auto;
-    border: 5px solid tomato;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
-    margin: 0 auto;
-    border: 5px solid #000;
   }
 }
 
 @media (min-width: 576px) {
-  /* code */
+  /* code sm */
 }
 
 @media (min-width: 768px) {
-  /* code */
+  /* code md */
 }
 
 @media (min-width: 992px) {
-  /* code */
+  /* code lg */
 }
 
 @media (min-width: 1200px) {
-  /* code */
+  /* code xl */
+}
+
+@media (min-width: 1600px) {
+  /* code xxl */
 }

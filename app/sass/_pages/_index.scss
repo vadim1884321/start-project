@@ -3,20 +3,14 @@
 @import '../_modules/titles';
 @import '../_modules/footer';
 
-.box12 {
-  width: 500px;
-  height: 100px;
-  border: 5px solid #000;
-
-  @media (min-width: 1200) {
-    border: 5px solid red;
-  }
-}
-
 #titlez {
-  font-size: 40px;
-
-  @media (min-width: 768) {
-    font-size: 60px;
+  @media (min-width: 1200px) {
+    color: teal;
+  }
+  @media (min-width: 992px) {
+    color: tomato;
+  }
+  @media (min-width: 768px) {
+    color: lime;
   }
 }
