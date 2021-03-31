@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% set title = "404" %}
+{% block title %}
+{% if title %}
+<title>{{ title }}</title>
+{% else %}
+<title>{{ site.title }}</title>
+{% endif %}
+{% endblock %}
+{% block content %}
+<main class="main-content">
+  <p>We’re sorry, but that content can’t be found. Please go <a href="/">back to home</a>.</p>
+  {{ content | safe }}
+</main>
+{% endblock content %}

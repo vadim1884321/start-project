@@ -1,11 +1,9 @@
-bower_components/
 node_modules/
 .git/
-app/css/
 Thumbs.db
+desktop.ini
 .DS_Store
 .idea/
 .vscode/
 __MACOSX
 gulp/
-test.scss
