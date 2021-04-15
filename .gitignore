@@ -7,3 +7,4 @@ desktop.ini
 .vscode/
 __MACOSX
 gulp/
+.pnpm-debug.log

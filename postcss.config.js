@@ -3,9 +3,7 @@ module.exports = {
     require('postcss-sort-media-queries')(),
     require('autoprefixer')({
       overrideBrowserslist: [
-        'last 2 versions',
-        '> 0.2%',
-        'not dead'
+        'defaults'
       ]
     }),
     // require('postcss-pxtorem')({
@@ -18,6 +16,6 @@ module.exports = {
     //   minPixelValue: 0,
     //   exclude: /(node_modules)/
     // }),
-    // require('cssnano')()
+    require('postcss-csso')()
   ]
 }
