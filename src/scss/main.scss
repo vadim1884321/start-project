@@ -1,10 +1,8 @@
-@import '_base/mixins';
-@import '_base/fonts';
-@import '_base/vars';
-@import '_base/libs';
-@import '_base/base';
-
-@import '_pages/index';
-@import '_pages/components';
-
-@import '_base/media';
+@use '_base/mixins';
+@use '_base/fonts';
+@use '_base/vars';
+@use '_base/libs';
+@use '_base/base';
+@use '_pages/index';
+@use '_pages/components';
+@use '_base/media';

@@ -1,11 +1,11 @@
 module.exports = {
   plugins: [
-    require('postcss-sort-media-queries')(),
     require('autoprefixer')({
       overrideBrowserslist: [
         'defaults'
       ]
     }),
+    require('postcss-sort-media-queries')(),
     // require('postcss-pxtorem')({
     //   rootValue: 16,
     //   unitPrecision: 5,

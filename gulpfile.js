@@ -3,13 +3,23 @@
 const fs = require('fs');
 const del = require('del');
 const gulp = require('gulp');
-const browserSync = require('browser-sync').create();
-const $ = require('gulp-load-plugins')();
+const nunjucksRender = require('gulp-nunjucks-render');
+const htmlBeautify = require('gulp-html-beautify');
+const sass = require('gulp-dart-sass');
+const postcss = require('gulp-postcss');
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
+const notify = require('gulp-notify');
+const terser = require('gulp-terser');
+const svgmin = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
+const browserSync = require('browser-sync');
 
 // Разметка
 const nunjucks = () => {
   return gulp.src('src/_includes/pages/**/*.+(html|njk)')
-    .pipe($.nunjucksRender({
+    .pipe(nunjucksRender({
       path: [
         'src/_includes/'
       ],
@@ -25,28 +35,32 @@ const nunjucks = () => {
         year: new Date().getFullYear()
       }
     }))
-    .on('error', $.notify.onError((error) => {
+    .on('error', notify.onError((error) => {
       return {
         title: 'Nunjucks',
         message: error.message
       };
     }))
-    .pipe($.htmlBeautify())
-    .pipe($.replace('../../', './'))
+    .pipe(htmlBeautify())
+    .pipe(replace('../../', './'))
     .pipe(gulp.dest('src/'))
-    .on('end', browserSync.reload);
+    .pipe(browserSync.stream());
 };
+
+exports.nunjucks = nunjucks;
 
 // Обработка стилей
 const styles = () => {
   return gulp.src('src/scss/**/*.scss', { sourcemaps: true })
-    .pipe($.dartSass({ outputStyle: 'expanded' }).on('error', $.notify.onError()))
-    .pipe($.postcss())
-    .pipe($.rename({ suffix: '.min', prefix: '' }))
-    .pipe($.replace('../../', '../'))
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', notify.onError()))
+    .pipe(postcss())
+    .pipe(rename({ suffix: '.min', prefix: '' }))
+    .pipe(replace('../../', '../'))
     .pipe(gulp.dest('src/css/', { sourcemaps: '.' }))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 };
+
+exports.styles = styles;
 
 // Обработка скриптов
 const scripts = () => {
@@ -55,21 +69,25 @@ const scripts = () => {
     '!node_modules/pixel-glass/script.js',
     'src/js/common.js', // Всегда в конце
   ])
-    // .pipe($.terser())
-    .pipe($.concat('main.min.js'))
+    // .pipe(terser())
+    .pipe(concat('main.min.js'))
     .pipe(gulp.dest('src/js/'))
-    .on('end', browserSync.reload);
+    .pipe(browserSync.stream());
 };
+
+exports.scripts = scripts;
 
 // Очистка папки c svg-спрайтом
 const svgClean = () => {
   return del('src/images/svg-sprite/**/*', { force: true })
 };
 
+exports.svgClean = svgClean;
+
 // Обработка SVG, создание svg-спрайта
 const svgSprite = () => {
   return gulp.src('src/images/svg/**/*.svg')
-    .pipe($.svgmin({
+    .pipe(svgmin({
       plugins: [
         { sortAttrs: true },
         { removeStyleElement: false },
@@ -80,10 +98,12 @@ const svgSprite = () => {
         pretty: true
       }
     }))
-    .pipe($.svgstore({ inlineSvg: true }))
-    .pipe($.rename('sprite.svg'))
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
     .pipe(gulp.dest('src/images/svg-sprite/'));
 };
+
+exports.svgSprite = svgSprite;
 
 // Автоперезагрузка браузера (Live Server)
 const serve = () => {
@@ -94,28 +114,37 @@ const serve = () => {
     ui: false,
     notify: false,
     open: 'local',
-    online: false
     // tunnel: true,
     // tunnel: 'projectname', //Demonstration page: http://projectname.localtunnel.me
   });
-  // browserSync.watch('app/*.html', browserSync.reload);
+  // browserSync.watch('src/*.html', browserSync.reload);
 };
+
+exports.serve = serve;
 
 const watch = () => {
   gulp.watch('src/_includes/**/*.html', gulp.series(nunjucks));
   gulp.watch('src/scss/**/*.scss', gulp.series(styles));
   gulp.watch('src/js/common.js', gulp.series(scripts));
-  gulp.watch('src/images/svg/**/*.svg', gulp.series(svg));
+  gulp.watch('src/images/svg/**/*.svg', gulp.series(svgClean, gulp.parallel(svgSprite)));
 };
 
-const svg = gulp.series(svgClean, gulp.parallel(svgSprite));
-const dev = gulp.series(gulp.parallel(nunjucks, styles, scripts, svg, watch, serve));
-
-exports.nunjucks = nunjucks;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.svgClean = svgClean;
-exports.svgSprite = svgSprite;
 exports.watch = watch;
-exports.serve = serve;
-exports.default = dev;
+
+exports.default = gulp.series(
+  gulp.parallel(
+    nunjucks,
+    styles,
+    scripts,
+    gulp.series(
+      svgClean,
+      gulp.parallel(
+        svgSprite
+      )
+    )
+  ),
+  gulp.parallel(
+    watch,
+    serve
+  )
+);

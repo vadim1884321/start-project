@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "vars";
+
 // help options font-display https://developer.mozilla.org/ru/docs/Web/CSS/@font-face/font-display
 @mixin font-face($name, $path, $weight: normal, $style: normal, $display: swap) {
   @font-face {
@@ -16,7 +19,7 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin button($button-bg-color: currentColor, $button-text-color: initial, $button-font-size: $base-font-size, $btn-border-radius: $button-border-radius, $button-width: null, $button-padding...) {
+@mixin button($button-bg-color: currentColor, $button-text-color: initial, $button-font-size: vars.$base-font-size, $btn-border-radius: vars.$button-border-radius, $button-width: null, $button-padding...) {
   background: $button-bg-color;
   font-size: $button-font-size;
   border-radius: $btn-border-radius;
@@ -24,7 +27,7 @@
   min-width: $button-width;
   padding: $button-padding;
   &:hover {
-    background: darken($button-bg-color, 10%);
+    background: color.adjust($button-bg-color, $lightness: -10%);
   }
   &:focus {
     outline: none;
@@ -34,7 +37,7 @@
     border: none;
   }
   &:active {
-    background: darken($button-bg-color, 20%);
+    background: color.adjust($button-bg-color, $lightness: -20%);
   }
   &:disabled,
   [disabled] {

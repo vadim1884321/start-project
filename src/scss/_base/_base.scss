@@ -1,4 +1,4 @@
-@import 'vars';
+@use 'vars';
 
 *,
 *::before,
@@ -7,7 +7,7 @@
 }
 
 ::placeholder {
-  color: $placeholder;
+  color: vars.$placeholder;
   opacity: 1;
   transition: opacity 0.25s;
 }
@@ -18,7 +18,7 @@
 
 ::selection {
   color: #fff;
-  background-color: $accent;
+  background-color: vars.$accent;
 }
 
 body {
@@ -28,12 +28,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  font: #{$base-font-size} / 1.5 $default-font;
   color: inherit;
+  font: #{vars.$base-font-size} / 1.5 vars.$default-font;
+  background-color: inherit;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; /* optimizeSpeed */
-  background-color: inherit;
 }
 
 ul[class],

@@ -1,3 +1,4 @@
+@use "sass:color";
 :root {
   --color: red;
 }
@@ -15,12 +16,11 @@ $placeholder: rgb(175, 175, 175);
 $line: rgb(36, 41, 48);
 $blue: blue;
 
-
 // Кнопки
 $button-bg-color: rgb(249, 148, 6);
 $button-color: white;
 $button-border-radius: 8px;
-$button-bg-hover-color: darken($button-bg-color, 10%);
+$button-bg-hover-color: color.adjust($button-bg-color, $lightness: -10%);
 $button-bg-focus-color: $button-bg-hover-color;
-$button-bg-active-color: darken($button-bg-color, 20%);
-$button-bg-disabled-color: lighten($button-bg-color, 10%);
+$button-bg-active-color: color.adjust($button-bg-color, $lightness: -20%);
+$button-bg-disabled-color: color.adjust($button-bg-color, $lightness: 10%);
