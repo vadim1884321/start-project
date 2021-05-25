@@ -10,6 +10,7 @@ const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
+const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const terser = require('gulp-terser');
 const svgmin = require('gulp-svgmin');
@@ -18,7 +19,8 @@ const browserSync = require('browser-sync');
 
 // Разметка
 const nunjucks = () => {
-  return gulp.src('src/_includes/pages/**/*.+(html|njk)')
+  return gulp.src('src/_includes/pages/**/*.{html, njk}')
+    .pipe(plumber())
     .pipe(nunjucksRender({
       path: [
         'src/_includes/'
@@ -35,12 +37,6 @@ const nunjucks = () => {
         year: new Date().getFullYear()
       }
     }))
-    .on('error', notify.onError((error) => {
-      return {
-        title: 'Nunjucks',
-        message: error.message
-      };
-    }))
     .pipe(htmlBeautify())
     .pipe(replace('../../', './'))
     .pipe(gulp.dest('src/'))
@@ -52,7 +48,8 @@ exports.nunjucks = nunjucks;
 // Обработка стилей
 const styles = () => {
   return gulp.src('src/scss/**/*.scss', { sourcemaps: true })
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', notify.onError()))
+    .pipe(plumber())
+    .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(postcss())
     .pipe(rename({ suffix: '.min', prefix: '' }))
     .pipe(replace('../../', '../'))
@@ -67,7 +64,7 @@ const scripts = () => {
   return gulp.src([
     // Подключаем JS библиотеки
     '!node_modules/pixel-glass/script.js',
-    'src/js/common.js', // Всегда в конце
+    'src/js/common.js'
   ])
     // .pipe(terser())
     .pipe(concat('main.min.js'))
@@ -123,7 +120,7 @@ const serve = () => {
 exports.serve = serve;
 
 const watch = () => {
-  gulp.watch('src/_includes/**/*.html', gulp.series(nunjucks));
+  gulp.watch('src/_includes/**/*.{html, njk}', gulp.series(nunjucks));
   gulp.watch('src/scss/**/*.scss', gulp.series(styles));
   gulp.watch('src/js/common.js', gulp.series(scripts));
   gulp.watch('src/images/svg/**/*.svg', gulp.series(svgClean, gulp.parallel(svgSprite)));

@@ -16,6 +16,6 @@ module.exports = {
     //   minPixelValue: 0,
     //   exclude: /(node_modules)/
     // }),
-    require('postcss-csso')()
+    // require('cssnano')()
   ]
 }

@@ -1,2 +1,161 @@
-@charset "UTF-8";:root{--color:red}@font-face{font-weight:400;font-family:"roboto-example";font-style:normal;font-display:swap;src:url(../fonts/RobotoRegular/RobotoRegular.woff) format("woff"),url(../fonts/RobotoRegular/RobotoRegular.woff2) format("woff2")}@font-face{font-weight:700;font-family:"roboto-example";font-style:normal;font-display:swap;src:url(../fonts/RobotoBold/RobotoBold.woff) format("woff"),url(../fonts/RobotoBold/RobotoBold.woff2) format("woff2")}*,::after,::before{box-sizing:border-box}::-moz-placeholder{color:#afafaf;opacity:1;-moz-transition:opacity .25s;transition:opacity .25s}:-ms-input-placeholder{color:#afafaf;opacity:1;-ms-transition:opacity .25s;transition:opacity .25s}::placeholder{color:#afafaf;opacity:1;transition:opacity .25s}:focus::-moz-placeholder{opacity:0}:focus:-ms-input-placeholder{opacity:0}:focus::placeholder{opacity:0}::-moz-selection{color:#fff;background-color:#f99406}::selection{color:#fff;background-color:#f99406}body{position:relative;display:flex;flex-direction:column;min-width:320px;min-height:100vh;overflow-x:hidden;color:inherit;font:16px/1.5 "roboto-example",sans-serif;background-color:inherit;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}ol[class],ul[class]{padding:0;list-style:none}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,ul[class]{margin:0}a:not([class]){-webkit-text-decoration-skip:ink;text-decoration-skip-ink:auto}button,input,select,textarea{font:inherit}img{display:block;max-width:100%;height:auto}.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;white-space:nowrap;border:0;clip:rect(0 0 0 0);-webkit-clip-path:polygon(0 0,0 0,0 0);clip-path:polygon(0 0,0 0,0 0)}.container{width:100%;margin:0 auto}@media (min-width:320px){.container{max-width:320px}}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1200px){.container{max-width:1200px}}@media (prefers-reduced-motion:reduce){*{-webkit-animation:none!important;animation:none!important}}
+@font-face {
+  font-weight: normal;
+  font-family: "roboto";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.woff2") format("woff2");
+}
+@font-face {
+  font-weight: bold;
+  font-family: "roboto";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.woff2") format("woff2");
+}
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-default: inherit;
+  --color-bg-default: inherit;
+  --color-accent: hsl(16, 100%, 66%);
+  --color-text: hsl(0, 0%, 74%);
+  --color-title: hsl(0, 0%, 100%);
+  --color-placeholder: hsl(0, 0%, 69%);
+  --font-default: "roboto", var(--font-sans-serif);
+  --font-sans-serif: system-ui, -apple-system, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-monospace: sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+  --font-size-default: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--color-default);
+  font: var(--font-size-default)/1.5 var(--font-default);
+  background-color: var(--color-bg-default);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* optimizeSpeed */
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 320px) {
+  .container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+  /* code sm */
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  /* code md */
+}
+@media (min-width: 992px) {
+  /* code lg */
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+  /* code xl */
+}
+@media (min-width: 1600px) {
+  /* code xxl */
+}
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
 /*# sourceMappingURL=main.min.css.map */

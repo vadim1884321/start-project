@@ -1,26 +1,28 @@
-@use 'mixins';
+// Цифровые значения насыщенности шрифтов, которые позволяют задавать больше, чем нормальное и полужирное начертание.
 
-/* Цифровые значения насыщенности шрифтов, которые позволяют задавать больше, чем нормальное и полужирное начертание. */
+// font-weight: 100;  Тонкий (Волосяной); Thin (Hairline)
+// font-weight: 200;  Дополнительный светлый (Сверхсветлый); Extra Light (Ultra Light)
+// font-weight: 300;  Светлый; Light
+// font-weight: 400;  Нормальный; Normal
+// font-weight: 500;  Средний; Medium
+// font-weight: 600;  Полужирный; Semi Bold (Demi Bold)
+// font-weight: 700;  Жирный; Bold
+// font-weight: 800;  Дополнительный жирный (Сверхжирный); Extra Bold (Ultra Bold)
+// font-weight: 900;  Черный (Густой); Black (Heavy)
+// Для шрифтов, которые предоставляют только normal и bold начертания, 100-500 normal, и 600-900 bold.
 
-/* font-weight: 100;  Тонкий (Волосяной); Thin (Hairline) */
+@font-face {
+  font-weight: normal;
+  font-family: 'roboto';
+  font-style: normal;
+  font-display: swap;
+  src: url('../../fonts/RobotoRegular/RobotoRegular.woff') format('woff'), url('../../fonts/RobotoRegular/RobotoRegular.woff2') format('woff2');
+}
 
-/* font-weight: 200;  Дополнительный светлый (Сверхсветлый); Extra Light (Ultra Light) */
-
-/* font-weight: 300;  Светлый; Light */
-
-/* font-weight: 400;  Нормальный; Normal */
-
-/* font-weight: 500;  Средний; Medium */
-
-/* font-weight: 600;  Полужирный; Semi Bold (Demi Bold) */
-
-/* font-weight: 700;  Жирный; Bold */
-
-/* font-weight: 800;  Дополнительный жирный (Сверхжирный); Extra Bold (Ultra Bold) */
-
-/* font-weight: 900;  Черный (Густой); Black (Heavy) */
-
-/* Для шрифтов, которые предоставляют только normal и bold начертания, 100-500 normal, и 600-900 bold. */
-
-@include mixins.font-face('roboto-example', '../../fonts/RobotoRegular/RobotoRegular');
-@include mixins.font-face('roboto-example', '../../fonts/RobotoBold/RobotoBold', bold);
+@font-face {
+  font-weight: bold;
+  font-family: 'roboto';
+  font-style: normal;
+  font-display: swap;
+  src: url('../../fonts/RobotoBold/RobotoBold.woff') format('woff'), url('../../fonts/RobotoBold/RobotoBold.woff2') format('woff2');
+}

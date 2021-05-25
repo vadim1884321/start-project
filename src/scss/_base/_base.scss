@@ -1,4 +1,4 @@
-@use 'vars';
+@use 'variables';
 
 *,
 *::before,
@@ -6,32 +6,20 @@
   box-sizing: border-box;
 }
 
-::placeholder {
-  color: vars.$placeholder;
-  opacity: 1;
-  transition: opacity 0.25s;
-}
-
-:focus::placeholder {
-  opacity: 0;
-}
-
 ::selection {
-  color: #fff;
-  background-color: vars.$accent;
+  color: var(--color-white);
+  background-color: var(--color-accent);
 }
 
 body {
-  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  color: inherit;
-  font: #{vars.$base-font-size} / 1.5 vars.$default-font;
-  background-color: inherit;
-  scroll-behavior: smooth;
+  color: var(--color-default);
+  font: var(--font-size-default) / 1.5 var(--font-default);
+  background-color: var(--color-bg-default);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; /* optimizeSpeed */
 }
@@ -76,21 +64,29 @@ img {
   height: auto;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
-  clip: rect(0 0 0 0);
-  clip-path: polygon(0 0, 0 0, 0 0);
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
