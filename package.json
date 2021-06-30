@@ -4,7 +4,7 @@
   "description": "gulp-start-template",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "editorconfig-checker"
   },
   "keywords": [],
   "author": "vadim1884321",
@@ -14,6 +14,7 @@
     "browser-sync": "^2.26.14",
     "cssnano": "^5.0.5",
     "del": "^6.0.0",
+    "editorconfig-checker": "^4.0.2",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^1.0.2",
