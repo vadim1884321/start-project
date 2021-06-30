@@ -19,13 +19,12 @@ const browserSync = require('browser-sync');
 
 // Разметка
 const nunjucks = () => {
-  return gulp.src('src/_includes/pages/**/*.{html, njk}')
+  return gulp.src('src/_includes/pages/**/*.{html,njk}')
     .pipe(plumber())
     .pipe(nunjucksRender({
       path: [
         'src/_includes/'
       ],
-      watch: true,
       envOptions: {
         trimBlocks: true,
         lstripBlocks: true
@@ -120,7 +119,7 @@ const serve = () => {
 exports.serve = serve;
 
 const watch = () => {
-  gulp.watch('src/_includes/**/*.{html, njk}', gulp.series(nunjucks));
+  gulp.watch('src/_includes/**/*.{html,njk}', gulp.series(nunjucks));
   gulp.watch('src/scss/**/*.scss', gulp.series(styles));
   gulp.watch('src/js/common.js', gulp.series(scripts));
   gulp.watch('src/images/svg/**/*.svg', gulp.series(svgClean, gulp.parallel(svgSprite)));
