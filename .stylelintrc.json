@@ -22,7 +22,7 @@
         "/^use/"
       ]
     }],
-    "string-quotes":"single",
+    "string-quotes": "single",
     "function-url-quotes": ["always", {
       "except": "empty"
     }]

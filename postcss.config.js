@@ -1,3 +1,4 @@
+const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   plugins: [
     require('autoprefixer')({
@@ -6,16 +7,6 @@ module.exports = {
       ]
     }),
     require('postcss-sort-media-queries')(),
-    // require('postcss-pxtorem')({
-    //   rootValue: 16,
-    //   unitPrecision: 5,
-    //   propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
-    //   selectorBlackList: [],
-    //   replace: true,
-    //   mediaQuery: false,
-    //   minPixelValue: 0,
-    //   exclude: /(node_modules)/
-    // }),
-    // require('cssnano')()
+    isProduction ? require('cssnano')() : false
   ]
 }
