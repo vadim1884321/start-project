@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "npx gulp",
-    "build": "NODE_ENV=production npx gulp build"
+    "build": "cross-env NODE_ENV=production npx gulp build"
   },
   "keywords": [],
   "author": "vadim1884321",
@@ -13,8 +13,8 @@
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "browser-sync": "^2.27.5",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.0.7",
-    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-html-beautify": "^1.0.1",
@@ -31,6 +31,7 @@
     "pixel-glass": "^1.0.13",
     "postcss": "^8.3.6",
     "postcss-sort-media-queries": "^3.11.12",
+    "rimraf": "^3.0.2",
     "sass": "^1.36.0",
     "stylelint": "^13.13.1",
     "stylelint-config-rational-order": "^0.1.2",

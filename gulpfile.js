@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const del = require('del');
+const rimraf = require('rimraf');
 const { src, dest, series, parallel, watch } = require('gulp');
 const nunjucksRender = require('gulp-nunjucks-render');
 const htmlBeautify = require('gulp-html-beautify');
@@ -74,8 +74,8 @@ const scripts = () => {
 exports.scripts = scripts;
 
 // Очистка папки c svg-спрайтом
-const svgClean = () => {
-  return del('src/images/svg-sprite/**/*', { force: true })
+const svgClean = (cb) => {
+  return rimraf('src/images/svg-sprite/**/*', cb)
 };
 
 exports.svgClean = svgClean;
