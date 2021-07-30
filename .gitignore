@@ -7,4 +7,5 @@ Thumbs.db
 *.sublime*
 __MACOSX
 dist/
+_site/
 *.log*

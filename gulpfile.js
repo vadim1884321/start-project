@@ -90,8 +90,12 @@ const svgSprite = () => {
         indent: 2,
       },
       plugins: [
-        'sortAttrs'
-      ],
+        'sortAttrs',
+        {
+          name: 'removeViewBox',
+          active: false,
+        }
+      ]
     }))
     .pipe(svgstore({ inlineSvg: true }))
     .pipe(rename('sprite.svg'))

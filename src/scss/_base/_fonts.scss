@@ -16,7 +16,7 @@
   font-family: 'roboto';
   font-style: normal;
   font-display: swap;
-  src: url('../../fonts/RobotoRegular/RobotoRegular.woff') format('woff'), url('../../fonts/RobotoRegular/RobotoRegular.woff2') format('woff2');
+  src: url('../../fonts/RobotoRegular/RobotoRegular.woff2') format('woff2'), url('../../fonts/RobotoRegular/RobotoRegular.woff') format('woff');
 }
 
 @font-face {
@@ -24,5 +24,5 @@
   font-family: 'roboto';
   font-style: normal;
   font-display: swap;
-  src: url('../../fonts/RobotoBold/RobotoBold.woff') format('woff'), url('../../fonts/RobotoBold/RobotoBold.woff2') format('woff2');
+  src: url('../../fonts/RobotoBold/RobotoBold.woff2') format('woff2'), url('../../fonts/RobotoBold/RobotoBold.woff') format('woff');
 }
