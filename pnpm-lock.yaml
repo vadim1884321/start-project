@@ -25,7 +25,7 @@ specifiers:
   postcss: ^8.3.6
   postcss-sort-media-queries: ^3.11.12
   rimraf: ^3.0.2
-  sass: ^1.36.0
+  sass: ^1.37.0
   stylelint: ^13.13.1
   stylelint-config-rational-order: ^0.1.2
   stylelint-config-standard: ^22.0.0
@@ -59,7 +59,7 @@ devDependencies:
   postcss: 8.3.6
   postcss-sort-media-queries: 3.11.12_postcss@8.3.6
   rimraf: 3.0.2
-  sass: 1.36.0
+  sass: 1.37.0
   stylelint: 13.13.1
   stylelint-config-rational-order: 0.1.2
   stylelint-config-standard: 22.0.0_stylelint@13.13.1
@@ -5318,8 +5318,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass/1.36.0:
-    resolution: {integrity: sha512-fQzEjipfOv5kh930nu3Imzq3ie/sGDc/4KtQMJlt7RRdrkQSfe37Bwi/Rf/gfuYHsIuE1fIlDMvpyMcEwjnPvg==}
+  /sass/1.37.0:
+    resolution: {integrity: sha512-B+Tu6cSAG8ffs/cqsZl/bgSH2pCmavDaPTYAoW8QA1qNHh/RqndNfVKuABKYkLjUQ5aq/BnCENVpE80cqdSM1w==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
