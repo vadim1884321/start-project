@@ -25,12 +25,12 @@ specifiers:
   postcss: ^8.4.4
   postcss-sort-media-queries: ^4.2.1
   rimraf: ^3.0.2
-  sass: ^1.44.0
+  sass: ^1.45.0
   stylelint: ^14.1.0
   stylelint-config-rational-order: ^0.1.2
   stylelint-config-standard: ^24.0.0
   stylelint-order: ^5.0.0
-  stylelint-scss: ^4.0.0
+  stylelint-scss: ^4.0.1
 
 dependencies:
   '@popperjs/core': 2.11.0
@@ -59,12 +59,12 @@ devDependencies:
   postcss: 8.4.4
   postcss-sort-media-queries: 4.2.1_postcss@8.4.4
   rimraf: 3.0.2
-  sass: 1.44.0
+  sass: 1.45.0
   stylelint: 14.1.0
   stylelint-config-rational-order: 0.1.2
   stylelint-config-standard: 24.0.0_stylelint@14.1.0
   stylelint-order: 5.0.0_stylelint@14.1.0
-  stylelint-scss: 4.0.0_stylelint@14.1.0
+  stylelint-scss: 4.0.1_stylelint@14.1.0
 
 packages:
 
@@ -2299,7 +2299,7 @@ packages:
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
-      nan: 2.14.2
+      nan: 2.15.0
     dev: true
     optional: true
 
@@ -3756,8 +3756,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /nan/2.14.2:
-    resolution: {integrity: sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==}
+  /nan/2.15.0:
+    resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
     dev: true
     optional: true
 
@@ -5181,13 +5181,14 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass/1.44.0:
-    resolution: {integrity: sha512-0hLREbHFXGQqls/K8X+koeP+ogFRPF4ZqetVB19b7Cst9Er8cOR0rc6RU7MaI4W1JmUShd1BPgPoeqmmgMMYFw==}
+  /sass/1.45.0:
+    resolution: {integrity: sha512-ONy5bjppoohtNkFJRqdz1gscXamMzN3wQy1YH9qO2FiNpgjLhpz/IPRGg0PpCjyz/pWfCOaNEaiEGCcjOFAjqw==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.2
       immutable: 4.0.0
+      source-map-js: 1.0.1
     dev: true
 
   /semver-greatest-satisfied-range/1.1.0:
@@ -5718,8 +5719,8 @@ packages:
       stylelint: 14.1.0
     dev: true
 
-  /stylelint-scss/4.0.0_stylelint@14.1.0:
-    resolution: {integrity: sha512-lIRhPqtI6I065EJ6aI4mWKsmQt8Krnu6aF9XSL9s8Nd2f/cDKImST0T9TfjnUul3ReKYWozkG9dlpNTZH2FB9w==}
+  /stylelint-scss/4.0.1_stylelint@14.1.0:
+    resolution: {integrity: sha512-Ea+KY7ZFsDhU6Ne9r84y7NvFSNA843w352MSdQeDmklar0pDbeQj9flKrVAuDIlK0pDDdhFtgBl/N0FrtWHq0g==}
     peerDependencies:
       stylelint: ^14.0.0
     dependencies:

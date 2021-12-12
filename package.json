@@ -33,12 +33,12 @@
     "postcss": "^8.4.4",
     "postcss-sort-media-queries": "^4.2.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.44.0",
+    "sass": "^1.45.0",
     "stylelint": "^14.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.0.0"
+    "stylelint-scss": "^4.0.1"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",
