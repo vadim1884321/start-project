@@ -25,6 +25,10 @@
     "string-quotes": "single",
     "function-url-quotes": ["always", {
       "except": "empty"
-    }]
+    }],
+    "font-family-name-quotes": "always-unless-keyword",
+    "color-function-notation": "legacy",
+    "hue-degree-notation": "number"
+
   }
 }

@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.7",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.12",
+    "cssnano": "^5.0.14",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-html-beautify": "^1.0.1",
@@ -30,15 +30,15 @@
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
     "pixel-glass": "^1.0.13",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.5",
     "postcss-sort-media-queries": "^4.2.1",
     "rimraf": "^3.0.2",
-    "sass": "^1.45.0",
-    "stylelint": "^14.1.0",
+    "sass": "^1.45.1",
+    "stylelint": "^14.2.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^24.0.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-scss": "^4.0.1"
+    "stylelint-scss": "^4.1.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.0",

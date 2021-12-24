@@ -1,7 +1,7 @@
-// Настройка Pixel Glass
+/* Настройка Pixel Glass */
 html {
   /* По умолчанию показывается мобильный макет */
-  background-image: url('../../images/планшет_арбитраж.png');
+  background-image: url('../../images/mobile_арбитраж.png');
   background-repeat: no-repeat;
   background-position: 50% 0;
 }
@@ -10,7 +10,7 @@ html {
 @media (min-width: 760px) {
   html {
     /* Планшетный макет */
-    background-image: url('../../images/планшет_арбитраж.png');
+    background-image: url('../../images/tablet_арбитраж.png');
   }
 }
 
@@ -18,6 +18,6 @@ html {
 @media (min-width: 960px) {
   html {
     /* Десктопный макет */
-    background-image: url('../../images/арбитраж.png');
+    background-image: url('../../images/desktop_арбитраж.png');
   }
 }
