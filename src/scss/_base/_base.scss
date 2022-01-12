@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 320px;
+  height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--color-default);
@@ -24,8 +25,8 @@ body {
   text-rendering: optimizeLegibility; /* optimizeSpeed */
 }
 
-ul[class],
-ol[class] {
+ul[role='list'],
+ol[role='list'] {
   padding: 0;
   list-style: none;
 }
@@ -61,7 +62,6 @@ select {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
 
 .visually-hidden:not(:focus):not(:active) {
