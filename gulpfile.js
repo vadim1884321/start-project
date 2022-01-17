@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const rimraf = require('rimraf');
 const { src, dest, series, parallel, watch } = require('gulp');
@@ -31,7 +29,7 @@ const nunjucks = () => {
         trimBlocks: true,
         lstripBlocks: true
       },
-      data : {
+      data: {
         nav: JSON.parse(fs.readFileSync('src/_data/navigation.json', 'utf8')),
         site: JSON.parse(fs.readFileSync('src/_data/site.json', 'utf8')),
         year: new Date().getFullYear()
@@ -62,7 +60,7 @@ exports.styles = styles;
 const scripts = () => {
   return src([
     // Подключаем JS библиотеки
-    'node_modules/pixel-glass/script.js',
+    '!node_modules/pixel-glass/script.js',
     'src/js/common.js'
   ], { sourcemaps: !isProduction })
     .pipe(gulpif(isProduction, terser()))
@@ -75,7 +73,7 @@ exports.scripts = scripts;
 
 // Очистка папки c svg-спрайтом
 const svgClean = (cb) => {
-  return rimraf('src/images/svg-sprite/**/*', cb)
+  return rimraf('src/images/svg-sprite/**/*', cb);
 };
 
 exports.svgClean = svgClean;
@@ -104,6 +102,8 @@ const svgSprite = () => {
 
 exports.svgSprite = svgSprite;
 
+const svg = series(svgClean, parallel(svgSprite));
+
 // Автоперезагрузка браузера (Live Server)
 const serve = () => {
   browserSync.init({
@@ -130,6 +130,5 @@ const watcher = () => {
 
 exports.watcher = watcher;
 
-const svg = series(svgClean, parallel(svgSprite));
 exports.build = series(parallel(nunjucks, styles, scripts, svg));
 exports.default = series(parallel(nunjucks, styles, scripts, svg), parallel(watcher, serve));

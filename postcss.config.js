@@ -9,4 +9,4 @@ module.exports = {
     require('postcss-sort-media-queries')(),
     isProduction ? require('cssnano')() : false
   ]
-}
+};
