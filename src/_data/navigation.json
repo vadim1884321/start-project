@@ -1,8 +1,8 @@
 {
-  "headerNav": [
-    {
-      "title": "Главная",
-      "link": "index.html"
-    }
-  ]
+	"headerNav": [
+		{
+			"title": "Главная",
+			"link": "index.html"
+		}
+	]
 }

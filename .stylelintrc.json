@@ -1,34 +1,35 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-rational-order"
-  ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-order"
-  ],
-  "rules": {
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": [
-        "/^at-/",
-        "/^mixin/",
-        "/^include/",
-        "/^if/",
-        "/^else/",
-        "/^function/",
-        "/^return/",
-        "/^each/",
-        "/^while/",
-        "/^use/"
-      ]
-    }],
-    "string-quotes": "single",
-    "function-url-quotes": ["always", {
-      "except": "empty"
-    }],
-    "font-family-name-quotes": "always-unless-keyword",
-    "color-function-notation": "legacy",
-    "hue-degree-notation": "number"
+	"extends": [
+		"stylelint-config-standard",
+		"stylelint-config-rational-order"
+	],
+	"plugins": [
+		"stylelint-scss",
+		"stylelint-order"
+	],
+	"rules": {
+		"at-rule-no-unknown": [true, {
+			"ignoreAtRules": [
+				"/^at-/",
+				"/^mixin/",
+				"/^include/",
+				"/^if/",
+				"/^else/",
+				"/^function/",
+				"/^return/",
+				"/^each/",
+				"/^while/",
+				"/^use/"
+			]
+		}],
+		"indentation": "tab",
+		"string-quotes": "single",
+		"function-url-quotes": ["always", {
+			"except": "empty"
+		}],
+		"font-family-name-quotes": "always-unless-keyword",
+		"color-function-notation": "legacy",
+		"hue-degree-notation": "number"
 
-  }
+	}
 }

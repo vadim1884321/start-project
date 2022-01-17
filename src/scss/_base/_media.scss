@@ -2,50 +2,50 @@
 
 /* Containers */
 .container {
-  width: 100%;
-  margin: 0 auto;
+	width: 100%;
+	margin: 0 auto;
 }
 
 @media (min-width: 320px) {
-  .container {
-    max-width: 320px;
-  }
+	.container {
+		max-width: 320px;
+	}
 }
 
 @media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
+	.container {
+		max-width: 540px;
+	}
 }
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+	.container {
+		max-width: 768px;
+	}
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
+	.container {
+		max-width: 1200px;
+	}
 }
 
 @media (min-width: 576px) {
-  /* code sm */
+	/* code sm */
 }
 
 @media (min-width: 768px) {
-  /* code md */
+	/* code md */
 }
 
 @media (min-width: 992px) {
-  /* code lg */
+	/* code lg */
 }
 
 @media (min-width: 1200px) {
-  /* code xl */
+	/* code xl */
 }
 
 @media (min-width: 1600px) {
-  /* code xxl */
+	/* code xxl */
 }

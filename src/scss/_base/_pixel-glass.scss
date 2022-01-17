@@ -1,23 +1,23 @@
 /* Настройка Pixel Glass */
 html {
-  /* По умолчанию показывается мобильный макет */
-  background-image: url('../../images/mobile_арбитраж.png');
-  background-repeat: no-repeat;
-  background-position: 50% 0;
+	/* По умолчанию показывается мобильный макет */
+	background-image: url('../../images/mobile.png');
+	background-repeat: no-repeat;
+	background-position: 50% 0;
 }
 
 /* Планшет */
 @media (min-width: 760px) {
-  html {
-    /* Планшетный макет */
-    background-image: url('../../images/tablet_арбитраж.png');
-  }
+	html {
+		/* Планшетный макет */
+		background-image: url('../../images/tablet.png');
+	}
 }
 
 /* Десктоп */
 @media (min-width: 960px) {
-  html {
-    /* Десктопный макет */
-    background-image: url('../../images/desktop_арбитраж.png');
-  }
+	html {
+		/* Десктопный макет */
+		background-image: url('../../images/desktop.png');
+	}
 }
