@@ -66,3 +66,12 @@ function randomInteger(min, max) {
 }
 
 console.log(randomInteger('hhh', 100));
+
+let arr = [1, 2, 3, 4];
+console.log(arr.reverse());
+
+console.log(arr);
+
+const arrReverse = (arr) => arr.reverse();
+console.log(arrReverse(arr));
+

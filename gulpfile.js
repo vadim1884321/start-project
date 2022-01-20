@@ -19,7 +19,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // Разметка
 const nunjucks = () => {
-	return src('src/_includes/layouts/**/*.{html,njk}')
+	return src('src/_includes/pages/**/*.{html,njk}')
 		.pipe(plumber())
 		.pipe(nunjucksRender({
 			path: [
