@@ -2,15 +2,12 @@
 root = true
 
 [*]
-indent_style = tab
+indent_style = space
 indent_size = 2
 end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
 charset = utf-8
-
-[*.{pug,jade,stylus,sass,yaml}]
-indent_style = space
 
 [*.md]
 trim_trailing_whitespace = false

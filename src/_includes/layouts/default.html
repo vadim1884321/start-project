@@ -27,10 +27,10 @@
 	<link rel="manifest" href="images/favicon/manifest.webmanifest">
 	<meta name="theme-color" content="red">
 	<!-- <link rel="preload" href="fonts/RobotoRegular/RobotoRegular.woff2" as="font" type="font/woff2" crossorigin> -->
-	<link rel="stylesheet" href="css/main.min.css">
-	{% block styles %}
-	{# Подключение стилей на определенную страницу #}
-	{% endblock %}
+	<link rel="stylesheet" href="./css/main.css">
+	{% block styles %}{% endblock %}
+  <script type="module" src="./js/main.bundle.js" defer></script>
+  {% block js %}{% endblock %}
 </head>
 
 <body>
@@ -39,10 +39,6 @@
 	{{ content | safe }}
 	{% endblock %}
 	{% include "partials/footer.html" %}
-	<script src="js/main.min.js"></script>
-	{% block js %}
-	{# Подключение скрипта на определенную страницу #}
-	{% endblock %}
 </body>
 
 </html>
