@@ -1,16 +1,17 @@
 :root {
-	--color-white: hsl(0, 0%, 100%);
-	--color-black: hsl(0, 0%, 0%);
-	--color-default: inherit;
-	--color-bg-default: inherit;
-	--color-accent: hsl(16, 100%, 66%);
-	--color-text: hsl(0, 0%, 74%);
-	--color-title: hsl(0, 0%, 100%);
-	--color-placeholder: hsl(0, 0%, 69%);
-	--font-default: 'roboto', var(--font-sans-serif);
-	/* stylelint-disable */
-	--font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-	--font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
-	/* stylelint-enable */
-	--font-size-default: 16px;
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-default: inherit;
+  --color-bg-default: inherit;
+  --color-accent: hsl(16, 100%, 66%);
+  --color-text: hsl(0, 0%, 74%);
+  --color-title: hsl(0, 0%, 100%);
+  --color-placeholder: hsl(0, 0%, 69%);
+  --font-default: 'roboto', var(--font-sans-serif);
+  /* stylelint-disable */
+  --font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
+    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
+  /* stylelint-enable */
+  --font-size-default: 16px;
 }

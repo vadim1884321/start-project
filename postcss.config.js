@@ -1,12 +1,8 @@
-const isProduction = process.env.NODE_ENV === 'production';
-module.exports = {
-	plugins: [
-		require('autoprefixer')({
-			overrideBrowserslist: [
-				'defaults'
-			]
-		}),
-		require('postcss-sort-media-queries')(),
-		isProduction ? require('cssnano')() : false
-	]
-};
+module.exports = (ctx) => ({
+  plugins: [
+    require('autoprefixer')(),
+    require('postcss-preset-env')({ stage: 0 }),
+    require('postcss-sort-media-queries')(),
+    ctx.env === 'production' ? require('cssnano')() : false,
+  ],
+})

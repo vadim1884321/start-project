@@ -1,0 +1,10 @@
+{% extends "layouts/default.njk" %}
+{% set title = "Главная" %}
+{% block title %}
+  <title>{{ title or site.title }}</title>
+{% endblock %}
+{% block content %}
+  <main class="main-content">
+    <h1 class="main-content__title">Hello, World!</h1>
+  </main>
+{% endblock content %}

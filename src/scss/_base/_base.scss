@@ -3,32 +3,36 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::selection {
-	color: var(--color-white);
-	background-color: var(--color-accent);
+  color: var(--color-white);
+  background-color: var(--color-accent);
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-width: 320px;
-	height: 100%;
-	min-height: 100vh;
-	overflow-x: hidden;
-	color: var(--color-default);
-	font: var(--font-size-default) / 1.5 var(--font-default);
-	background-color: var(--color-bg-default);
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility; /* optimizeSpeed */
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--color-default);
+  font: var(--font-size-default) / 1.5 var(--font-default);
+  background-color: var(--color-bg-default);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility; /* optimizeSpeed */
+}
+
+[hidden] {
+  display: none;
 }
 
 ul[role='list'],
 ol[role='list'] {
-	padding: 0;
-	list-style: none;
+  padding: 0;
+  list-style: none;
 }
 
 body,
@@ -45,44 +49,44 @@ figcaption,
 blockquote,
 dl,
 dd {
-	margin: 0;
+  margin: 0;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 img {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
-.visually-hidden:not(:focus):not(:active) {
-	position: absolute !important;
-	width: 1px !important;
-	height: 1px !important;
-	margin: -1px !important;
-	padding: 0 !important;
-	overflow: hidden !important;
-	white-space: nowrap !important;
-	border: 0 !important;
-	clip: rect(0, 0, 0, 0) !important;
+.visually-hidden:not(:focus, :active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 
-	*,
-	*::before,
-	*::after {
-		transition-duration: 0.01ms !important;
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		scroll-behavior: auto !important;
-	}
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
