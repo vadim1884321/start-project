@@ -5,4 +5,4 @@ module.exports = (ctx) => ({
     require('postcss-sort-media-queries')(),
     ctx.env === 'production' ? require('cssnano')() : false,
   ],
-})
+});
