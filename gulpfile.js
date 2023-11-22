@@ -94,8 +94,8 @@ const scripts = () => {
 };
 
 // Очистка папки c svg-спрайтом
-const svgClean = (cb) => {
-  return rimraf('./src/images/svg-sprite/**/*', cb);
+const svgClean = () => {
+  return rimraf('./src/images/svg-sprite/**/*');
 };
 
 // Обработка SVG, создание svg-спрайта
