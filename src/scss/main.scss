@@ -11,3 +11,11 @@
 @use '_modules/titles';
 @use '_modules/footer';
 @use '_base/media';
+
+.main-content {
+	&__title {
+		color: tomato;
+		user-select: none;
+		transition: all;
+	}
+}
