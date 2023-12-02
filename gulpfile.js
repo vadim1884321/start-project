@@ -1,18 +1,3 @@
-// const fs = require('fs');
-// const rimraf = require('rimraf');
-// const { src, dest, series, parallel, watch } = require('gulp');
-// const nunjucksRender = require('gulp-nunjucks-render');
-// const posthtml = require('gulp-posthtml');
-// // const htmlBeautify = require('gulp-html-beautify');
-// const sass = require('gulp-sass')(require('sass'));
-// const postcss = require('gulp-postcss');
-// const esbuild = require('gulp-esbuild');
-// const rename = require('gulp-rename');
-// const replace = require('gulp-replace');
-// const plumber = require('gulp-plumber');
-// const svgmin = require('gulp-svgmin');
-// const svgstore = require('gulp-svgstore');
-// const browserSync = require('browser-sync');
 import * as fs from 'node:fs';
 import gulp from 'gulp';
 import { rimraf } from 'rimraf';
@@ -120,8 +105,32 @@ export const svgClean = () => {
 // Обработка SVG, создание svg-спрайта
 export const svgSprite = () => {
 	return gulp
-		.src('./src/images/svg-icons/**/*.svg')
-		.pipe(svgmin())
+		.src('./src/images/svg/**/*.svg')
+		.pipe(
+			svgmin({
+				multipass: true,
+				js2svg: {
+					indent: 2,
+					pretty: !isProduction,
+				},
+				plugins: [
+					{
+						name: 'preset-default',
+						params: {
+							overrides: {
+								removeViewBox: false,
+							},
+						},
+					},
+					{
+						name: 'sortAttrs',
+						params: {
+							xmlnsOrder: 'alphabetical',
+						},
+					},
+				],
+			})
+		)
 		.pipe(svgstore({ inlineSvg: true }))
 		.pipe(rename('sprite.svg'))
 		.pipe(gulp.dest('./src/images/svg-sprite'));
@@ -147,15 +156,8 @@ export const watch = () => {
 	gulp.watch('./src/_includes/**/*.{html,njk}', gulp.series(nunjucks));
 	gulp.watch('./src/scss/**/*.scss', gulp.series(styles));
 	gulp.watch('./src/js/**/!(main.bundle.js)*.js', gulp.series(scripts));
-	gulp.watch('./src/images/svg-icons/**/*.svg', gulp.series(svg));
+	gulp.watch('./src/images/svg/**/*.svg', gulp.series(svg));
 };
-
-// exports.svg = svg;
-// exports.nunjucks = nunjucks;
-// exports.styles = styles;
-// exports.scripts = scripts;
-// exports.serve = serve;
-// exports.watch = watch;
 
 export const build = gulp.series(gulp.parallel(nunjucks, styles, scripts, svg));
 export default gulp.series(gulp.parallel(nunjucks, styles, scripts, svg), gulp.parallel(watch, serve));
