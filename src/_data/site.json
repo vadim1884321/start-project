@@ -1,10 +1,10 @@
 {
-	"title": "Заголовок сайта",
-	"name": "Название сайта",
-	"description": "Краткое описание сайта",
-	"authorName": "vadim1884321",
-	"authorEmail": "",
-	"url": "https://site.ru",
-	"language": "ru",
-	"copyright": "Копирование контента и размещение на других сайтах запрещено."
+  "title": "Woodtech - Создаём тёплую атмосферу вашего отдыха",
+  "name": "Woodtech",
+  "description": "Компания Woodtech - создаём тёплую атмосферу вашего отдыха в деревянном стиле",
+  "authorName": "vadim1884321",
+  "authorEmail": "vadim1884321@gmail.com",
+  "url": "https://example.ru",
+  "language": "ru",
+  "copyright": "Копирование контента и размещение на других сайтах запрещено."
 }
