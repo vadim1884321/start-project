@@ -1,35 +1,471 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="description" content="Краткое описание сайта"/>
-    <meta name="author" content="vadim1884321"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="alternate" type="application/rss+xml" title="Заголовок сайта" href="https://site.ru/feed.xml"/>
-    <link rel="canonical" href="https://site.ru"/>
-  <title>Главная</title>
-    <meta property="og:locale" content="ru_RU"/>
-    <meta property="og:url" content="https://site.ru"/>
-    <meta property="og:title" content="Главная"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:site_name" content="Название сайта"/>
-    <meta property="og:image" content="https://site.ru"/>
-    <meta property="og:type" content="website"/>
-    <link rel="icon" href="favicon.ico" sizes="any"/>
-    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml"/>
-    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png"/>
-    <link rel="manifest" href="images/favicon/manifest.webmanifest"/>
-    <meta name="theme-color" content="red"/>
-    <!-- <link rel="preload" href="fonts/RobotoRegular/RobotoRegular.woff2" as="font" type="font/woff2" crossorigin> -->
-    <link rel="stylesheet" href="./css/main.css"/>
-  </head>
 
-  <body>
-<header class="main-header"></header>
-  <main class="main-content">
-    <h1 class="main-content__title">Hello, World!</h1>
-  </main>
-<footer class="main-footer"></footer>
-    <script type="module" src="./js/main.bundle.js" defer></script>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Компания Woodtech - создаём тёплую атмосферу вашего отдыха в деревянном стиле">
+		<meta name="keywords" content="">
+		<meta name="author" content="vadim1884321">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link rel="alternate" type="application/rss+xml" title="Woodtech - Создаём тёплую атмосферу вашего отдыха" href="https://example.ru/feed.xml">
+		<link rel="canonical" href="https://example.ru">
+		<title>Главная</title>
+		<meta property="og:locale" content="ru_RU">
+		<meta property="og:url" content="https://example.ru">
+		<meta property="og:title" content="Главная">
+		<meta property="og:description" content="">
+		<meta property="og:site_name" content="Woodtech">
+		<meta property="og:image" content="https://example.ru">
+		<meta property="og:type" content="website">
+		<link rel="icon" href="favicon.ico">
+		<link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="images/favicon/manifest.webmanifest">
+		<meta name="theme-color" content="red">
+		
+		<script src="js/main.bundle.js" defer></script>
+			
+		<link rel="stylesheet" href="css/main.css">
+
+		
+	</head>
+
+	<body>
+<header class="main-header">
+	<div class="container">
+
+			<a href="/" class="logo logo--header">Woodtech
+		<span class="logo__text"></span></a>
+
+			<nav class="main-navigation main-navigation--header">
+		<button class="main-navigation__button" type="button">
+			<svg class="main-navigation__icon icon-hamburger" aria-hidden="true" height="20" width="20">
+				<use href="images/svg-sprite/sprite.svg#bars"></use>
+			</svg>
+		</button>
+		
+		<ul class="main-navigation__list" role="list">
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Главная</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Проекты</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Услуги</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Блог</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Компания</a>
+			</li>
+		</ul>
+	</nav>
+
+			<ul class="social-links social-links--header" role="list">
+		<div class="social-links__wrapper">
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Instagram"
+				aria-label="Наш Instagram">
+					<svg class="social-links__icon icon-vk" aria-label="Наш Instagram">
+						<use xlink:href="images/svg-sprite/sprite.svg#instagram"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Вконтакте"
+				aria-label="Наш Вконтакте">
+					<svg class="social-links__icon icon-facebook" aria-label="Наш Вконтакте">
+						<use xlink:href="images/svg-sprite/sprite.svg#vk"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Facebook"
+				aria-label="Наш Facebook">
+					<svg class="social-links__icon icon-odnoklassniki" aria-label="Наш Facebook">
+						<use xlink:href="images/svg-sprite/sprite.svg#facebook"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Twitter"
+				aria-label="Наш Twitter">
+					<svg class="social-links__icon icon-instagram" aria-label="Наш Twitter">
+						<use xlink:href="images/svg-sprite/sprite.svg#twitter"></use>
+					</svg>
+				</a>
+			</li>
+		</div>
+	</ul>
+
+
+	</div>
+	<!-- /.container -->
+</header>
+	<main class="main-content">
+<h1 class="visually-hidden">Woodtech - Создаём тёплую атмосферу вашего отдыха</h1>
+<section class="home-slider">
+	<div class="swiper-wrapper">
+
+		<div class="home-slider__slide swiper-slide" style="background-image: url('images/portfolio/interior-3.jpg');">
+			<div class="container">
+				<h2 data-animate="bottom" class="home-slider__title">Woodhouse<br>
+					<span>дизайн на высоком уровне</span>
+				</h2>
+				<p data-animate="bottom" class="home-slider__text">Разработка и реализация красивых интерьеров из дерева ещё
+					никогда не была так доступна. Интерьеры из дерева различной породы сделают ваш дом уютным и тёплым, радуя вас
+					и ваших гостей.</p>
+			</div>
+		</div>
+
+		<div class="home-slider__slide swiper-slide" style="background-image: url('images/portfolio/interior-1.jpg');">
+			<div class="container">
+				<h2 data-animate="bottom" class="home-slider__title">Интерьер<br>
+					<span>в современном стиле</span></h2>
+				<p data-animate="bottom" class="home-slider__text">Разработка и реализация красивых интерьеров из дерева ещё
+					никогда не была так доступна. Интерьеры из дерева различной породы сделают ваш дом уютным и тёплым, радуя вас
+					и ваших гостей.</p>
+			</div>
+		</div>
+
+		<div class="swiper-slide home-slider__slide" style="background-image: url('images/portfolio/installation-1.jpg');">
+			<div class="container">
+				<h2 data-animate="bottom" class="home-slider__title">Деревянные<br>
+					<span>инсталляции любой сложности</span>
+				</h2>
+				<p data-animate="bottom" class="home-slider__text">Разработка и реализация красивых интерьеров из дерева ещё
+					никогда не была так доступна. Интерьеры из дерева различной породы сделают ваш дом уютным и тёплым, радуя вас
+					и ваших гостей.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row home-slider__control">
+		<div class="col-3 home-slider__pagination-wrapper">
+			<div class="home-slider__pagination swiper-pagination"></div>
+		</div>
+		<div class="col-6 home-slider__scrollbar-wrapper">
+			<div class="home-siler__scrollbar swiper-scrollbar"></div>
+		</div>
+		<div class="col-3 home-slider__navigation">
+			<div class="home-slider__prev swiper-button-prev"></div>
+			<div class="home-slider__next swiper-button-next"></div>
+		</div>
+	</div>
+
+</section>
+<section class="we-are-trusted">
+	<div class="container">
+		<div class="we-are-trusted__statistics">
+			<h2 class="we-are-trusted__statistics-title">Нам доверяют</h2>
+			<ul class="we-are-trusted__statistics-list" role="list">
+				<li>
+					<b>860</b> клиентов по всему миру</li>
+				<li>
+					<b>23</b> надёжных партнёра</li>
+				<li>
+					<b>12</b> поставщиков</li>
+				<li>
+					<b>36</b> лучших франчайзи</li>
+				<li>
+					<b>108</b> производителей мебели</li>
+				<li>
+					<b>85</b> сотрудников</li>
+				<li>
+					<b>38</b> пернатых попугаев</li>
+				<li>
+					<b>256</b> восьмибитных цветов</li>
+			</ul>
+		</div>
+<div class="home-callback">
+	<p class="home-callback__text">Позвоните нам или оставьте заявку с сайта.<br>Мы перезвоним вам в
+		течение 10 минут.
+	</p>
+	<a href="tel:+74992467532" class="home-callback__phone" title="Позвонить...">+7 (499) 246-75-32</a>
+	<button type="button" class="home-callback__button button">Оформить заявку сейчас</button>
+</div>
+	</div>
+	<!-- /.container -->
+</section>
+<section class="best-works">
+	<header class="best-works__header">
+		<div class="container">
+			<p class="best-works__description">Представляем вам лучшие проекты, разработанные нашей командой профессионалов
+				с
+				любовью и заботой клиентах. Портфолио позволит вам выбрать интересующий стиль, цвет дерева, фактуру, дизайн и
+				расположение элементов.</p>
+			<div class="best-works__header-block">
+				<h2 class="best-works__title title-slashes">Лучшие работы</h2>
+				<p class="best-works__slogan section-title">Создаём
+					тёплую
+					атмосферу вашего
+					отдыха</p>
+			</div>
+		</div>
+	</header>
+	<div class="best-works__bottom">
+		<div class="container">
+			<article class="best-works__item">
+				<a href="#" class="best-works__link">
+					<img src="images/portfolio/interior-4.jpg" alt="Современная гостиная в древесных тонах">
+				</a>
+				<div class="best-works__content">
+					<address title="Санкт-Петербург, Английский Проспект">
+						<svg width="12" height="15" class="best-works__icon icon-mapmarker" aria-hidden="true">
+							<use xlink:href="images/svg-sprite/sprite.svg#mapmarker"></use>
+						</svg>
+						Санкт-Петербург, Английский Проспект
+					</address>
+					<h3 class="best-works__content-title">
+						<a href="#" class="best-works__content-link">Современная гостиная в древесных тонах</a>
+					</h3>
+				</div>
+			</article>
+			<article class="best-works__item">
+				<a href="#" class="best-works__link">
+					<img src="images/portfolio/interior-5.1.jpg" alt="Панорамная чилаут зона для чтения и отдыха">
+				</a>
+				<div class="best-works__content">
+					<address title="Москва, Рублево-Успенское Шоссе">
+						<svg width="12" height="15" class="best-works__icon icon-mapmarker" aria-hidden="true">
+							<use xlink:href="images/svg-sprite/sprite.svg#mapmarker"></use>
+						</svg>
+						Москва, Рублево-Успенское Шоссе
+					</address>
+					<h3 class="best-works__content-title">
+						<a href="#" class="best-works__content-link">Панорамная чилаут зона для чтения и отдыха</a>
+					</h3>
+				</div>
+			</article>
+			<article class="best-works__item">
+				<a href="#" class="best-works__link">
+					<img src="images/portfolio/interior-3.jpg" alt="Уютный лофт в светлых древесных тонах">
+				</a>
+				<div class="best-works__content">
+					<address title="Москва, На Якиманке">
+						<svg width="12" height="15" class="best-works__icon icon-mapmarker" aria-hidden="true">
+							<use xlink:href="images/svg-sprite/sprite.svg#mapmarker"></use>
+						</svg>
+						Москва, На Якиманке
+					</address>
+					<h3 class="best-works__content-title">
+						<a href="#" class="best-works__content-link">Уютный лофт в светлых древесных тонах</a>
+					</h3>
+				</div>
+			</article>
+		</div>
+		<div class="best-works__button">
+			<a href="#" class="button">Загрузить ещё</a>
+		</div>
+	</div>
+</section>
+<section class="advantages">
+	<div class="container">
+<div class="advantages-slider-wrapper">
+	<div class="advantages-slider">
+		<div class="swiper-wrapper">
+			<div class="advantages-slider__slide swiper-slide">
+				<img src="images/portfolio/interior-6_adv.jpg" alt="Alt">
+			</div>
+			<div class="advantages-slider__slide swiper-slide">
+				<img src="images/portfolio/interior-8_adv.jpg" alt="Alt">
+			</div>
+		</div>
+		<div class="advantages-slider__caption">
+			<b>32</b>
+			<span>года<br>на рынке</span></div>
+	</div>
+
+</div>
+<div class="advantages-about-us">
+	<header class="advantages-about-us__header">
+		<h2 class="advantages-about-us__title title-slashes">Коротко о нас</h2>
+		<p class="advantages-about-us__slogan section-title">Проектируем и создаём экологичный
+			комфорт</p>
+		<p class="advantages-about-us__description">
+			В работе мы используем только лучшие материалы на рынке по доступным
+			ценам. Наши специалисты подберут наиболее подходящие породы дерева, специалисты по дизайну разработают
+			готовое решение.
+		</p>
+	</header>
+	<div class="advantages-about-us__items">
+		<article class="advantages-about-us__item">
+			<a href="#" class="advantages-about-us__link">
+				<div class="advantages-about-us__item-wrapper">
+					<svg class="advantages-about-us__icon icon-eco" width="55" height="40" aria-hidden="true">
+						<use xlink:href="images/svg-sprite/sprite.svg#eco"></use>
+					</svg>
+					<h3 class="advantages-about-us__item-title">Безопасные материалы
+					</h3>
+				</div>
+			</a>
+			<p class="advantages-about-us__item-description">Безопасность каждого из используемых материалов подтверждается
+				соответствующим сертификатом европейского стандарта. Мы используем продукцию только проверенных годами
+				брендов.</p>
+			<a href="#" class="advantages-about-us__read-more-link">Подробнее</a>
+		</article>
+		<article class="advantages-about-us__item">
+			<a href="#" class="advantages-about-us__link">
+				<div class="advantages-about-us__item-wrapper">
+					<svg class="advantages-about-us__icon icon-wood" width="40" height="40" aria-hidden="true">
+						<use xlink:href="images/svg-sprite/sprite.svg#wood"></use>
+					</svg>
+					<h3 class="advantages-about-us__item-title">Качественная древесина</h3>
+				</div>
+			</a>
+			<p class="advantages-about-us__item-description">В создании неповторимых интерьеров мы используем только
+				качественную,
+				проверенную европейскую древесину, которая будет служить вам долгие годы, сохраняя свои качества и
+				безупречный внешний вид.</p>
+			<a href="#" class="advantages-about-us__read-more-link">Подробнее</a>
+		</article>
+	</div>
+</div>
+	</div>
+</section>
+		
+	</main>
+<footer class="main-footer">
+	<div class="container">
+		<div class="main-footer__wrapper">
+			<div class="main-footer__about-us">
+					<a href="/" class="logo logo--footer">Woodtech
+		<span class="logo__text"></span></a>
+
+				<div class="main-footer__content">
+					<h2 class="main-footer__title title">
+						Коротко о нас
+					</h2>
+					<p class="main-footer__description">
+						Мы досконально прорабатываем, а затем обсуждаем с нашими клиентами внешний вид каждого изделия. Мы крайне
+						редко
+						повторяемся, ведь мы знаем, что вы цените индивидуальность и не готовы довольствоваться готовыми решениями.
+					</p>
+				</div>
+			</div>
+			<div class="main-footer__nav-list">
+				<h2 class="main-footer__title footer-title">
+					Меню
+				</h2>
+					<nav class="main-navigation main-navigation--footer">
+		<button class="main-navigation__button" type="button">
+			<svg class="main-navigation__icon icon-hamburger" aria-hidden="true" height="20" width="20">
+				<use href="images/svg-sprite/sprite.svg#bars"></use>
+			</svg>
+		</button>
+		
+		<ul class="main-navigation__list" role="list">
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Главная</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Проекты</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Услуги</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Блог</a>
+			</li>
+			<li class="main-navigation__item">
+				<a href="#" class="main-navigation__link">Компания</a>
+			</li>
+		</ul>
+	</nav>
+
+			</div>
+			<div class="main-footer__service-list">
+				<h2 class="main-footer__title footer-title">
+					Услуги
+				</h2>
+				<ul class="main-footer__list" role="list">
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Дизайн интерьера</a>
+					</li>
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Проектирование</a>
+					</li>
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Поставка дерева</a>
+					</li>
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Ремонт</a>
+					</li>
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Концепт</a>
+					</li>
+					<li class="main-footer__item">
+						<a href="#" class="main-footer__item-link">Выезд мастера</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main-footer__social">
+				<h2 class="main-footer__title footer-title">
+					Мы в соц. сетях
+				</h2>
+				<p class="main-footer__description">
+					Подпишитесь на нас в социальных сетях, чтобы не пропустить выход новых невероятных проектов, разработанных для
+					наших
+					клиентов по всему миру.
+				</p>
+					<ul class="social-links social-links--footer" role="list">
+		<div class="social-links__wrapper">
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Instagram"
+				aria-label="Наш Instagram">
+					<svg class="social-links__icon icon-vk" aria-label="Наш Instagram">
+						<use xlink:href="images/svg-sprite/sprite.svg#instagram"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Вконтакте"
+				aria-label="Наш Вконтакте">
+					<svg class="social-links__icon icon-facebook" aria-label="Наш Вконтакте">
+						<use xlink:href="images/svg-sprite/sprite.svg#vk"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Facebook"
+				aria-label="Наш Facebook">
+					<svg class="social-links__icon icon-odnoklassniki" aria-label="Наш Facebook">
+						<use xlink:href="images/svg-sprite/sprite.svg#facebook"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Twitter"
+				aria-label="Наш Twitter">
+					<svg class="social-links__icon icon-instagram" aria-label="Наш Twitter">
+						<use xlink:href="images/svg-sprite/sprite.svg#twitter"></use>
+					</svg>
+				</a>
+			</li>
+		</div>
+	</ul>
+
+			</div>
+		</div>
+	</div>
+</footer>
+<button class="back-to-top" type="button" aria-label="Наверх">
+	<svg class="back-to-top__icon icon-up-arrow" width="15" height="9" aria-hidden="true">
+		<use xlink:href="images/svg-sprite/sprite.svg#up-arrow"></use>
+	</svg>
+</button>
+	<!-- Swiper JS -->
+	
+	
+
+	
+
+	<!-- Initialize Swiper -->
+	
+	</body>
+
 </html>

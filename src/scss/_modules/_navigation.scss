@@ -1,0 +1,123 @@
+.main-navigation {
+	&--header {
+		position: relative;
+		display: flex;
+		flex: 0 0 50%;
+		justify-content: flex-end;
+
+		.main-navigation__button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px;
+			color: white;
+			background-color: transparent;
+			border: none;
+
+			@media (width >= 992px) {
+				display: none;
+			}
+		}
+
+		.main-navigation__icon {
+			fill: currentcolor;
+		}
+
+		.main-navigation__list {
+			position: absolute;
+			top: -7px;
+			right: 35px;
+			overflow: hidden;
+			visibility: hidden;
+			background-color: var(--color-dark);
+			border-radius: var(--radius);
+			opacity: 0;
+			transition:
+				opacity var(--transition),
+				visibility var(--transition);
+
+			&--is-show {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			@media (width >= 992px) {
+				position: static;
+				display: flex;
+				justify-content: space-evenly;
+				width: 100%;
+				visibility: visible;
+				background-color: transparent;
+				opacity: 1;
+			}
+		}
+
+		.main-navigation__link {
+			display: block;
+			padding: 14px 35px;
+			font-size: 12px;
+			line-height: 1.5;
+			color: rgb(255 255 255 / 50%);
+			text-align: left;
+			text-decoration: none;
+			text-transform: uppercase;
+			border-bottom: 1px solid rgb(255 255 255 / 5%);
+			border-radius: 0;
+			transition: all var(--transition);
+
+			&:hover {
+				color: rgb(255 255 255 / 75%);
+				background-color: rgb(196 196 196 / 7.5%);
+			}
+
+			@media (width >= 992px) {
+				display: inline-block;
+				padding: 5px 16px;
+				font-size: var(--font-size-small-text);
+				font-weight: 500;
+				color: var(--color-white);
+				text-transform: none;
+				border-radius: var(--radius-style);
+				transition: background-color var(--transition);
+
+				&:hover,
+				&:focus {
+					color: var(--color-white);
+					background-color: hsl(0deg 0% 80% / 20%);
+				}
+
+				&:active {
+					color: var(--color-accent);
+				}
+			}
+		}
+
+		@media (width >= 992px) {
+			justify-content: center;
+		}
+	}
+
+	&--footer {
+		.main-navigation__list {
+			flex-direction: column;
+
+			.main-navigation__item {
+				margin-bottom: 5px;
+			}
+
+			.main-navigation__link {
+				padding: 0;
+				font-size: var(--font-size-small-text);
+				font-weight: 300;
+				color: var(--color-white);
+				text-decoration: none;
+				transition: color var(--transition);
+
+				&:hover {
+					color: var(--color-accent);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

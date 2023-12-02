@@ -1,0 +1,38 @@
+{% macro social(mod) %}
+	<ul class="social-links{% if mod %} social-links--{{ mod }}{% endif %}" role="list">
+		<div class="social-links__wrapper">
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Instagram"
+				aria-label="Наш Instagram">
+					<svg class="social-links__icon icon-vk" aria-label="Наш Instagram">
+						<use xlink:href="images/svg-sprite/sprite.svg#instagram"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Вконтакте"
+				aria-label="Наш Вконтакте">
+					<svg class="social-links__icon icon-facebook" aria-label="Наш Вконтакте">
+						<use xlink:href="images/svg-sprite/sprite.svg#vk"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Facebook"
+				aria-label="Наш Facebook">
+					<svg class="social-links__icon icon-odnoklassniki" aria-label="Наш Facebook">
+						<use xlink:href="images/svg-sprite/sprite.svg#facebook"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="social-links__item">
+				<a href="#" class="social-links__link" target="_blank" rel="noopener nofollow" title="Наш Twitter"
+				aria-label="Наш Twitter">
+					<svg class="social-links__icon icon-instagram" aria-label="Наш Twitter">
+						<use xlink:href="images/svg-sprite/sprite.svg#twitter"></use>
+					</svg>
+				</a>
+			</li>
+		</div>
+	</ul>
+{% endmacro %}

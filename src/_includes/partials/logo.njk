@@ -1,3 +1,5 @@
 {% macro logo(mod) %}
-  <a href="{{ '/' }}" class="logo{% if mod %} {{ mod }}{% endif %}">{{title}}</a>
+	<a href="{{ '/' }}" class="logo{% if mod %} logo--{{ mod }}{% endif %}">{{ site.name }}
+		<span class="logo__text">{{
+		site.logoText }}</span></a>
 {% endmacro %}

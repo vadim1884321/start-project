@@ -1,19 +1,99 @@
 @font-face {
-  font-weight: 400;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-display: swap;
-  src: local('Roboto'), local('Roboto-Regular'), url('../../fonts/Roboto_400.woff2') format('woff2'),
-    url('../../fonts/Roboto_400.woff') format('woff');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('../../fonts/Raleway/Raleway_300.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_300.woff') format('woff');
+	font-display: swap;
 }
 
 @font-face {
-  font-weight: 700;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-display: swap;
-  src: local('Roboto'), local('Roboto-Bold'), url('../../fonts/Roboto_700.woff2') format('woff2'),
-    url('../../fonts/Roboto_700.woff') format('woff');
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('../../fonts/Raleway/Raleway_400.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_400.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 500;
+	src:
+		url('../../fonts/Raleway/Raleway_500.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_500.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 600;
+	src:
+		url('../../fonts/Raleway/Raleway_600.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_600.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('../../fonts/Raleway/Raleway_700.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_700.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 800;
+	src:
+		url('../../fonts/Raleway/Raleway_800.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_800.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Raleway-woodtech;
+	font-style: normal;
+	font-weight: 900;
+	src:
+		url('../../fonts/Raleway/Raleway_900.woff2') format('woff2'),
+		url('../../fonts/Raleway/Raleway_900.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Roboto-woodtech;
+	font-style: normal;
+	font-weight: 300;
+	src:
+		url('../../fonts/Roboto/Roboto_300.woff2') format('woff2'),
+		url('../../fonts/Roboto/Roboto_300.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Roboto-woodtech;
+	font-style: normal;
+	font-weight: 500;
+	src:
+		url('../../fonts/Roboto/Roboto_500.woff2') format('woff2'),
+		url('../../fonts/Roboto/Roboto_500.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Roboto-woodtech;
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('../../fonts/Roboto/Roboto_700.woff2') format('woff2'),
+		url('../../fonts/Roboto/Roboto_700.woff') format('woff');
+	font-display: swap;
 }

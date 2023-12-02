@@ -1,0 +1,45 @@
+.logo {
+	font-size: 17px;
+	color: var(--color-white);
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&--header {
+		width: 50%;
+		font-weight: bold;
+
+		&::before {
+			border: 2px solid var(--color-accent);
+		}
+	}
+
+	&--footer {
+		font-weight: 800;
+		opacity: 0.5;
+
+		&::before {
+			border: 2px solid var(--color-white);
+		}
+	}
+
+	&::before {
+		position: relative;
+		top: 1px;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		margin-right: 7px;
+		content: '';
+		border-radius: var(--radius-style);
+	}
+
+	&__text {
+		display: block;
+		margin-left: 22px;
+		font-size: 12px;
+		font-weight: 300;
+		text-transform: none;
+		letter-spacing: 0.24em;
+		opacity: 0.45;
+	}
+}

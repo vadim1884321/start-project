@@ -7,7 +7,7 @@ html {
 }
 
 /* Планшет */
-@media (min-width: 760px) {
+@media (width >= 760px) {
 	html {
 		/* Планшетный макет */
 		background-image: url('../../images/tablet.png');
@@ -15,7 +15,7 @@ html {
 }
 
 /* Десктоп */
-@media (min-width: 960px) {
+@media (width >= 960px) {
 	html {
 		/* Десктопный макет */
 		background-image: url('../../images/desktop.png');

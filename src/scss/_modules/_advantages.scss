@@ -1,0 +1,10 @@
+.advantages {
+	padding: 80px 0 50px;
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+		justify-content: space-evenly;
+	}
+}

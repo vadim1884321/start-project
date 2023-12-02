@@ -1,0 +1,56 @@
+{% from "partials/logo.njk" import logo with context %}
+{% from "partials/navigation.njk" import navigation with context %}
+{% from "partials/social-links.njk" import social with context %}
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="{{ site.description }}">
+		<meta name="keywords" content="">
+		<meta name="author" content="{{ site.authorName }}">
+		{# <meta name="viewport" content="width=device-width, initial-scale=1"> #}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+		<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+		{% block title %}
+			<title>{{ title }}</title>
+		{% endblock %}
+		<meta property="og:locale" content="ru_RU">
+		<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+		<meta property="og:title" content="{{ title }}">
+		<meta property="og:description" content="{{ description }}">
+		<meta property="og:site_name" content="{{ site.name }}">
+		<meta property="og:image" content="{{ site.url }}{{ image }}">
+		<meta property="og:type" content="website">
+		<link rel="icon" href="favicon.ico">
+		<link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+		<link rel="manifest" href="images/favicon/manifest.webmanifest">
+		<meta name="theme-color" content="red">
+		{# <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/> #}
+		<script src="js/main.bundle.js" defer></script>
+		{% block styles %}
+			{# Подключение стилей на определенную страницу #}
+		{% endblock %}
+		<link rel="stylesheet" href="css/main.css">
+
+		{# <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> #}
+	</head>
+
+	<body>
+		{% include "partials/header.njk" %}
+		{% block content %}
+			{{ content | safe }}
+		{% endblock %}
+		{% include "partials/footer.njk" %}
+		{% include "partials/back-to-top.njk" %}
+		{% block js %}
+			{# Подключение скрипта на определенную страницу #}
+		{% endblock %}
+	</body>
+
+</html>

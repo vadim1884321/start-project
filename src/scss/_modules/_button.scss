@@ -1,1 +1,33 @@
+.button {
+	--primary-h: 32;
+	--primary-s: 100%;
+	--primary-l: 49%;
 
+	position: relative;
+	display: inline-block;
+	padding: 10px 28px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--color-white);
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.25px;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	background-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+	border: none;
+	border-radius: var(--radius-style);
+
+	&:hover,
+	&:focus {
+		--primary-l: 54%;
+
+		/* text-decoration: none; */
+	}
+
+	&:active {
+		--primary-l: 44%;
+	}
+}

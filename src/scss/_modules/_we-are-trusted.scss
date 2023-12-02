@@ -1,0 +1,55 @@
+.we-are-trusted {
+	position: relative;
+	z-index: 1;
+	padding: 50px 0;
+	color: var(--color-dark-header);
+	background-color: var(--color-deep);
+
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@media (width >= 992px) {
+			justify-content: space-between;
+		}
+	}
+
+	&__statistics {
+		display: none;
+		width: 66.66%;
+
+		&-title {
+			position: relative;
+			margin-bottom: 30px;
+			font-size: 18px;
+			font-weight: 900;
+			text-transform: uppercase;
+
+			&::after {
+				position: absolute;
+				bottom: -15px;
+				left: 0;
+				width: 30%;
+				height: 1px;
+				content: '';
+				background-color: var(--color-dark-div);
+			}
+		}
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			font-size: var(--font-size-small-text);
+
+			& li {
+				flex: 0 0 33.33%;
+				margin-bottom: 10px;
+			}
+		}
+
+		@media (width >= 992px) {
+			display: block;
+		}
+	}
+}

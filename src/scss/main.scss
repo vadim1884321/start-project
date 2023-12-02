@@ -3,19 +3,5 @@
 @use '_base/variables';
 @use '_base/libraries';
 @use '_base/base';
-@use '_modules/header';
-@use '_modules/nav';
-@use '_modules/button';
-@use '_modules/breadcrumbs';
-@use '_modules/pagination';
-@use '_modules/titles';
-@use '_modules/footer';
+@use '_modules/modules';
 @use '_base/media';
-
-.main-content {
-	&__title {
-		color: tomato;
-		user-select: none;
-		transition: all;
-	}
-}

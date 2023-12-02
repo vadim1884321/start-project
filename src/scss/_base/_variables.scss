@@ -1,17 +1,32 @@
 :root {
-  --color-white: hsl(0, 0%, 100%);
-  --color-black: hsl(0, 0%, 0%);
-  --color-default: inherit;
-  --color-bg-default: inherit;
-  --color-accent: hsl(16, 100%, 66%);
-  --color-text: hsl(0, 0%, 74%);
-  --color-title: hsl(0, 0%, 100%);
-  --color-placeholder: hsl(0, 0%, 69%);
-  --font-default: 'roboto', var(--font-sans-serif);
-  /* stylelint-disable */
-  --font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
-    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
-  /* stylelint-enable */
-  --font-size-default: 16px;
+	--color-white: hsl(0, 0%, 100%);
+	--color-dark: hsl(218, 11%, 14%);
+	--color-default: var(--color-text);
+	--color-bg-default: var(--color-dark);
+	--color-accent: hsl(32, 100%, 49%);
+	--color-text: hsl(0, 0%, 20%);
+	--color-deep: hsl(180, 6%, 10%);
+	--color-dark-header: hsl(216, 11%, 49%);
+	--color-dark-div: hsl(224, 11%, 20%);
+	--color-bg-light: hsl(0, 0%, 98%);
+	--color-light-disabled: hsl(210, 8%, 90%);
+	--color-light-div: hsl(240, 2%, 91%);
+	--color-middle-gray: hsla(216, 11%, 49%, 0.75);
+	--color-text-gray: hsl(0, 0%, 60%);
+	--color-placeholder: hsl(0, 0%, 69%);
+	--color-slider-control: hsl(219, 13%, 56%);
+	--color-address: hsl(217, 7%, 62%);
+	--font-default: 'Raleway-woodtech', var(--font-sans-serif);
+	/* stylelint-disable */
+	--font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans',
+		'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New', monospace;
+	/* stylelint-enable */
+	--font-size-default: 16px;
+	--font-size-small-text: 14px;
+	--radius: 5px;
+	--radius-style: 0 5px;
+	--transition: 0.25s ease-out;
+	--transition-test: 0.75s ease-out;
+	--gap: 20px;
 }

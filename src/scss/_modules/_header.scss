@@ -1,1 +1,16 @@
+.main-header {
+	position: absolute;
+	top: 0;
+	right: 50px;
+	left: 50px;
+	z-index: 100;
+	padding: 43px calc(var(--gap) / 2) 20px calc(var(--gap) / 2);
+	user-select: none;
+	border-bottom: 1px solid hsl(0deg 0% 100% / 10%);
 
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

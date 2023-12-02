@@ -1,0 +1,30 @@
+.home-callback {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	&__text {
+		margin-bottom: 15px;
+		font-size: var(--font-size-small-text);
+		line-height: 1.65;
+	}
+
+	&__phone {
+		font-family: Roboto-woodtech, var(--font-sans-serif);
+		font-size: 28px;
+		font-weight: 300;
+		line-height: 1;
+		color: var(--color-white);
+		text-decoration: none;
+	}
+
+	&__button {
+		margin-top: 20px;
+	}
+
+	@media (width >= 992px) {
+		flex: 0 0 33.33%;
+		align-items: flex-end;
+		text-align: right;
+	}
+}
