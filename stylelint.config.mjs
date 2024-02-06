@@ -1,7 +1,7 @@
 /** @type {import("stylelint").Config} */
 export default {
-	extends: ['stylelint-config-standard-scss', 'stylelint-config-recess-order', 'stylelint-config-prettier-scss'],
-	plugins: ['stylelint-scss'],
+	extends: ['stylelint-config-standard-scss', 'stylelint-config-rational-order', 'stylelint-config-prettier-scss'],
+	plugins: ['stylelint-scss', 'stylelint-order'],
 	rules: {
 		'at-rule-no-unknown': null,
 		'no-descending-specificity': null,
